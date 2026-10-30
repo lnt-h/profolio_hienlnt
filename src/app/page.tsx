@@ -1,7 +1,7 @@
 import { FloatingGlassNav } from "@/components/layout/FloatingGlassNav";
 import { MiniScrollProgress } from "@/components/layout/MiniScrollProgress";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { TemplateDownload } from "@/components/layout/TemplateDownload";
+import { SourceLink } from "@/components/layout/SourceLink";
 import { AdaptiveCursor } from "@/components/motion/AdaptiveCursor";
 import { Preloader } from "@/components/motion/Preloader";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -19,7 +19,7 @@ export default function Home() {
       <Preloader />
       <MiniScrollProgress />
       <FloatingGlassNav />
-      <TemplateDownload />
+      <SourceLink />
       <AdaptiveCursor />
       <main id="main-content">
         <HeroSection />

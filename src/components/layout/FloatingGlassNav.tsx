@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { navigation, templateDownload } from "@/content/site";
+import { navigation, sourceRepository } from "@/content/site";
 
 const watchedSections = ["home", "about", "projects", "skills", "more", "contact"];
 
@@ -137,13 +137,14 @@ export function FloatingGlassNav() {
               <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
             ))}
             <a
-              className="mobile-template-link"
-              href={templateDownload.href}
+              className="mobile-source-link"
+              href={sourceRepository.href}
               target="_blank"
               rel="noreferrer"
+              aria-label="View portfolio source code on GitHub"
               onClick={() => setMenuOpen(false)}
             >
-              Download template <span aria-hidden="true">↗</span>
+              {sourceRepository.mobileLabel} <span aria-hidden="true">↗</span>
             </a>
           </motion.div>
         )}

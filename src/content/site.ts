@@ -13,8 +13,9 @@ export type Portrait = {
   mobileObjectPosition: string;
 };
 
-export type TemplateDownload = {
+export type SourceRepository = {
   label: string;
+  mobileLabel: string;
   href: string;
 };
 
@@ -94,8 +95,9 @@ export const profile: Profile = {
   ],
 };
 
-export const templateDownload: TemplateDownload = {
-  label: "Download template",
+export const sourceRepository: SourceRepository = {
+  label: "View source",
+  mobileLabel: "Source on GitHub",
   href: "https://github.com/lnt-h/profolio_hienlnt",
 };
 

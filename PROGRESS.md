@@ -23,10 +23,10 @@ This is a **handoff and progress ledger**, not a replacement for the design spec
 | Field | Value |
 | --- | --- |
 | Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
-| Active task | **Needs review** — F06/F09/F13/F14 cursor boundary, Skills inventory, Spotify, and Contact refinements; mobile/reduced-motion review remains |
-| Last completed development task | **F09 SAA removal and F14 persistent reply indicator** |
-| Repo / Git status | Interaction cleanup committed locally at `e303ab5`; no secrets or new dependencies added |
-| App runtime / screenshots | Safari desktop Contact conversation and semantic Skills inventory inspected locally; Chrome/mobile cursor matrix remains pending |
+| Active task | **Needs review** — F04 source repository CTA and remaining mobile/reduced-motion review |
+| Last completed development task | **F04 open-source repository CTA refinement** |
+| Repo / Git status | Source CTA refinement implemented locally; no secrets or new dependencies added |
+| App runtime / screenshots | Safari desktop source CTA, Contact conversation, and semantic Skills inventory inspected locally; mobile viewport matrix remains pending |
 | Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
 | Design source | `plan.md`: 10 inspiration groups and approved layout/interaction contract |
 | Next recommended action | Supply verified LinkedIn/project content, then complete mobile/browser/reduced-motion QA |
@@ -50,7 +50,7 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 | F01 | 1 | Next.js + TypeScript + Tailwind foundation | Done | Migrated to `src/`, added Motion/content types/tokens/fonts; lint/typecheck/build pass |
 | F02 | 1 | Preloader 0–100% and page reveal | Needs review | Intro and session/hash/reduced-motion bypass implemented; Safari lifecycle fix applied; full timing pass pending |
 | F03 | 1 | Hero, oversized typography, gold spotlight | Needs review | Desktop Safari visual checked against references; mobile visual review pending |
-| F04 | 1 | Floating centered Apple-like glass navbar | Needs review | Desktop capsule/dropdown/active pill visible; complete keyboard/mobile scrollspy review pending |
+| F04 | 1 | Floating centered Apple-like glass navbar | Needs review | Desktop capsule/dropdown/active pill and public source CTA verified in Safari; complete keyboard/mobile scrollspy review pending |
 | F05 | 1 | Full-width top scroll progress, 3px | Needs review | Owner-approved contract update implemented; Safari desktop verified at top/mid/near-end positions; mobile browser review pending |
 | F06 | 1 | Adaptive inverted/zooming cursor | Needs review | One theme-aware layer plus native-cursor zones for cross-origin embeds implemented; Chrome/Safari pointer-transition and touch/reduced-motion matrix pending |
 | F07 | 1 | About Me / portrait / editorial layout | Needs review | Owner portrait now uses intentional matte/double-frame/vignette treatment; final biography/mobile crop review pending |
@@ -72,6 +72,8 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 
 | Date (ICT) | Task ID | Check | Result | Evidence / notes |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | F04 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | Source CTA rename compiles cleanly; static `/` remains generated with one-hour revalidation |
+| 2026-10-31 | F04 | Safari desktop visual/semantic review | Pass | Fixed capsule shows GitHub icon, `View source`, and external indicator; accessible name and destination resolve to the public portfolio repository; mobile menu path code-reviewed only |
 | 2026-10-31 | F06, F09, F13–F14 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | ESLint/strict TypeScript pass; production build emits static `/` with one-hour revalidation |
 | 2026-10-31 | F09, F14 | Safari desktop visual/semantic review | Partial pass | Contact renders question → contact response → right-aligned reply-wait bubble; decorative dots stay out of the accessibility tree; semantic Skills inventory contains 10 items with AWS retained and no SAA entry |
 | 2026-10-31 | F06, F13 | Spotify cursor review | Needs review | Native-cursor zone and cleanup code verified; browser automation could not reliably retain Chrome focus and CUA cannot hover without a click, so Safari/Chrome pointer-boundary behavior remains hands-on QA |
@@ -94,6 +96,17 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 When work begins, record actual commands and outputs (or concise paths to logs), affected browsers/screen sizes, and whether screenshots were compared to the relevant reference image.
 
 ## 5. Session handoff (keep newest at top)
+
+### 2026-10-31 — F04: open-source repository CTA
+
+- **Status:** Needs review
+- **Scope:** Replace the misleading template-download action with an honest link to the public portfolio source repository.
+- **Changed files:** `src/components/layout/SourceLink.tsx`, `src/components/layout/FloatingGlassNav.tsx`, `src/content/site.ts`, `src/app/page.tsx`, `src/app/globals.css`, `PROGRESS.md`; removed `src/components/layout/TemplateDownload.tsx`.
+- **Implemented:** Desktop now shows `View source` with GitHub/external-link cues; mobile shows `Source on GitHub`; config, types, component names, CSS classes, and accessible labels now consistently describe source viewing rather than downloading.
+- **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop visually and semantically confirms the CTA and repository destination. Repository search finds no legacy download/template identifiers in `src/`.
+- **Issues / deviations:** Mobile menu behavior is code-reviewed but not visually resized in Safari; the broader mobile viewport matrix remains pending.
+- **Git checkpoint:** None; commit/push not requested for this slice.
+- **Next action:** Verify the mobile menu CTA at 320–390px during the next responsive review.
 
 ### 2026-10-31 — F06, F09, F13–F14: contact reply, Skills cleanup, and Spotify cursor boundary
 

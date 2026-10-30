@@ -65,11 +65,12 @@ button { font: inherit; }
 .more-menu a { display: block; border-radius: 12px; padding: 11px 12px; font-size: 0.9rem; }
 .more-menu a:hover, .more-menu a:focus-visible { background: #292929; }
 .mobile-menu-button, .mobile-menu { display: none; }
-.template-download { position: fixed; top: 25px; right: max(20px, calc((100vw - 1380px) / 2)); z-index: 119; display: inline-flex; min-height: 46px; align-items: center; gap: 9px; border: 1px solid rgb(17 17 17 / 0.16); border-radius: 999px; padding: 0 16px; background: rgb(250 249 247 / 0.88); box-shadow: 0 10px 30px rgb(0 0 0 / 0.1); color: var(--ink); font-size: 0.78rem; font-weight: 750; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-.template-download svg { width: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.template-download:hover { border-color: rgb(17 17 17 / 0.34); background: white; }
-.mobile-template-link { border-top: 1px solid rgb(255 255 255 / 0.12); color: #f3c95e; }
-.mobile-template-link span { float: right; }
+.source-link { position: fixed; top: 25px; right: max(20px, calc((100vw - 1380px) / 2)); z-index: 119; display: inline-flex; min-height: 46px; align-items: center; gap: 9px; border: 1px solid rgb(17 17 17 / 0.16); border-radius: 999px; padding: 0 16px; background: rgb(250 249 247 / 0.88); box-shadow: 0 10px 30px rgb(0 0 0 / 0.1); color: var(--ink); font-size: 0.78rem; font-weight: 750; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.source-link svg { width: 17px; fill: currentColor; }
+.source-link:hover { border-color: rgb(17 17 17 / 0.34); background: white; }
+.source-link-external { font-size: 0.86rem; line-height: 1; }
+.mobile-source-link { border-top: 1px solid rgb(255 255 255 / 0.12); color: #f3c95e; }
+.mobile-source-link span { float: right; }
 
 /* Cursor */
 .adaptive-cursor { 
@@ -427,7 +428,7 @@ button { font: inherit; }
   .mobile-menu { display: grid; top: calc(100% + 12px); left: 0; width: 100%; border-radius: 22px; padding: 10px; }
   .mobile-menu a { border-radius: 14px; padding: 13px 14px; }
   .mobile-menu a:hover, .mobile-menu a:focus-visible { background: #292929; }
-  .template-download { display: none; }
+  .source-link { display: none; }
   .hero-top-row { gap: 14px; margin-bottom: 24px; }
   .hero-title { font-size: clamp(3.5rem, 15vw, 7.6rem); }
   .about-grid, .projects-header, .dark-heading-row { grid-template-columns: 1fr; }
