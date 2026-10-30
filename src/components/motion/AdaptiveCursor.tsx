@@ -1,0 +1,60 @@
+"use client";
+
+import { motion, useMotionValue, useSpring } from "motion/react";
+import { useEffect, useState } from "react";
+
+type CursorVariant = "default" | "interactive" | "hero" | "hidden";
+
+export function AdaptiveCursor() {
+  const rawX = useMotionValue(-100);
+  const rawY = useMotionValue(-100);
+  const x = useSpring(rawX, { stiffness: 850, damping: 48, mass: 0.18 });
+  const y = useSpring(rawY, { stiffness: 850, damping: 48, mass: 0.18 });
+  const [variant, setVariant] = useState<CursorVariant>("hidden");
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
+    const updateCapability = () => setEnabled(media.matches);
+    updateCapability();
+    media.addEventListener("change", updateCapability);
+
+    const onMove = (event: PointerEvent) => {
+      rawX.set(event.clientX);
+      rawY.set(event.clientY);
+      const target = event.target as HTMLElement;
+      if (target.closest("[data-cursor='hero']")) setVariant("hero");
+      else if (target.closest("a, button, [data-cursor='interactive']")) setVariant("interactive");
+      else setVariant("default");
+    };
+    const onLeave = () => setVariant("hidden");
+    const onEnter = () => setVariant("default");
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+    document.documentElement.addEventListener("mouseleave", onLeave);
+    document.documentElement.addEventListener("mouseenter", onEnter);
+    return () => {
+      media.removeEventListener("change", updateCapability);
+      window.removeEventListener("pointermove", onMove);
+      document.documentElement.removeEventListener("mouseleave", onLeave);
+      document.documentElement.removeEventListener("mouseenter", onEnter);
+    };
+  }, [rawX, rawY]);
+
+  if (!enabled) return null;
+
+  return (
+    <motion.div
+      className={`adaptive-cursor cursor-${variant}`}
+      style={{ x, y }}
+      animate={{
+        width: variant === "hero" ? 176 : variant === "interactive" ? 54 : 20,
+        height: variant === "hero" ? 176 : variant === "interactive" ? 54 : 20,
+        opacity: variant === "hidden" ? 0 : 1,
+      }}
+      transition={{ type: "spring", stiffness: 310, damping: 25 }}
+      aria-hidden="true"
+    />
+  );
+}
+

@@ -1,0 +1,129 @@
+# HIENLNT Portfolio — Development Progress
+
+> Project: **hienlnt.id.vn** — independent personal Software Engineer portfolio  
+> Last reviewed: **2026-10-30**  
+> Status: **Core local portfolio implemented; real content and full responsive review pending**  
+> Source of requirements: [`plan.md`](./plan.md) · Codex rules: [`AGENTS.md`](./AGENTS.md) · Visual references: [`references/`](./references/)
+
+## 1. How to use this file
+
+This is a **handoff and progress ledger**, not a replacement for the design specification or Git history. Codex must **verify the repository state and Git diff** before trusting any status recorded here.
+
+- Update **after each meaningful implementation task** and when a blocker materially changes.
+- Keep entries factual and concise. Record **what changed, evidence of verification, known issues, and the next action**.
+- Do not mark a component `Done` merely because code was written or Codex reported success.
+- Allowed statuses: `Not started`, `In progress`, `Needs review`, `Blocked`, `Done`.
+- `Done` requires the task's acceptance criteria to pass, relevant checks to be recorded, and visual/manual review where applicable.
+- If a check could not run, write `Not run` with a reason. Never fabricate passed tests or visual reviews.
+- Only change `plan.md` / approved design requirements on explicit user request; this file records **execution state**, not a new design decision.
+- No automatic Git commit, push, deploy, external service creation, or DNS changes without the user's authorization.
+
+## 2. Current snapshot
+
+| Field | Value |
+| --- | --- |
+| Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
+| Active task | **Needs review** — replace honest fallbacks with owner-verified content |
+| Last completed development task | **F01 foundation and F15 Vietnam clock** |
+| Repo / Git status | Inspected; local user documentation/reference changes preserved; application changes uncommitted |
+| App runtime / screenshots | Safari desktop Hero, preloader, glass nav, spotlight, semantics, and ICT clock inspected locally |
+| Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
+| Design source | `plan.md`: 10 inspiration groups and approved layout/interaction contract |
+| Next recommended action | Supply verified portrait, projects/media, skills, email, GitHub, and LinkedIn; then complete content and mobile/browser QA |
+
+### Known inputs / open dependencies
+
+- [x] `plan.md` and `AGENTS.md` have been prepared as documents.
+- [x] Confirm that `plan.md`, `AGENTS.md`, `PROGRESS.md`, and unpacked `references/` are present in the actual Codex repository.
+- [ ] Confirm final profile text, real project list, work links, portrait, contact details, and CV before publishing. Do not invent missing facts.
+- [ ] Verify domain registration, hosting, and deployment only when those tasks are authorized; the chosen domain is **not proof of ownership or publication**.
+- [x] Check repository contents and installed toolchain before choosing package manager or commands.
+
+## 3. Master implementation tracker
+
+Each row names a *deliverable*, not evidence of existing code. Initial statuses below are deliberately `Not started` until the live repository is inspected.
+
+| ID | Phase | Deliverable | Status | Acceptance evidence / outstanding work |
+| --- | --- | --- | --- | --- |
+| F00 | 0 | Repository intake, content inventory, reference mapping | Needs review | Repo/assets/references audited; personal content still missing from repository |
+| F01 | 1 | Next.js + TypeScript + Tailwind foundation | Done | Migrated to `src/`, added Motion/content types/tokens/fonts; lint/typecheck/build pass |
+| F02 | 1 | Preloader 0–100% and page reveal | Needs review | Intro and session/hash/reduced-motion bypass implemented; Safari lifecycle fix applied; full timing pass pending |
+| F03 | 1 | Hero, oversized typography, gold spotlight | Needs review | Desktop Safari visual checked against references; mobile visual review pending |
+| F04 | 1 | Floating centered Apple-like glass navbar | Needs review | Desktop capsule/dropdown/active pill visible; complete keyboard/mobile scrollspy review pending |
+| F05 | 1 | Mini scroll progress, 120–160px × 2px | Needs review | Correct 148×2px visual present; full scroll behavior not manually recorded |
+| F06 | 1 | Adaptive inverted/zooming cursor | Needs review | Single spotlight cursor visible in Safari; touch/reduced-motion matrix pending |
+| F07 | 1 | About Me / portrait / editorial layout | Blocked | Editorial layout and monogram fallback implemented; real portrait/final bio required |
+| F08 | 1 | Featured Projects | Blocked | Honest editorial empty state implemented; verified projects/media/links required |
+| F09 | 1 → 2 | Skills fallback, then draggable tech carousel | Needs review | Repository-backed stack list plus bounded Motion bubbles implemented; touch/drag QA pending |
+| F10 | 2 | Dark curved kinetic marquee | Needs review | Native curved SVG textPath and reduced-motion fallback implemented; visual loop QA pending |
+| F11 | 2 | Behind the Curtains card layout | Needs review | Three-card dark layout and honest empty states implemented; responsive visual pass pending |
+| F12 | 2 | GitHub public activity integration | Blocked | Verified GitHub URL absent; no API request or fake activity added |
+| F13 | 2 | Guestbook and Spotify connections | Needs review | Approved fallback-first unavailable states implemented; no services/credentials provisioned |
+| F14 | 1 | Minimal two-chat-bubble Contact | Blocked | Two-bubble layout implemented; verified email/social actions required |
+| F15 | 1 | Footer with Vietnam date/live time/year | Done | Safari showed correct ICT date/time; static build has no hydration/current-time error |
+| F16 | 1 → 3 | Responsive, SEO, accessibility, performance | Needs review | Semantics, focus, reduced-motion CSS, metadata, breakpoints implemented; full audit pending |
+| F17 | 3 | Optional blue fluid 3D orb | Not started | **Optional only**, no baseline dependency |
+| F18 | 3 | CI, final review, production deployment | Not started | Test results + deployment only with explicit authorization |
+
+**Canonical requirements:** Read the exact section specs, animation timing, visual sources, and final acceptance checklist in `plan.md`. Do not treat this table as a substitute for them.
+
+## 4. Verification log
+
+| Date (ICT) | Task ID | Check | Result | Evidence / notes |
+| --- | --- | --- | --- | --- |
+| 2026-10-30 | F01–F16 | `npm run lint` | Pass | ESLint completed with no warnings/errors |
+| 2026-10-30 | F01–F16 | `npx tsc --noEmit` | Pass | Strict TypeScript completed successfully |
+| 2026-10-30 | F01–F16 | `npm run build` | Pass | Next production build emitted static `/` and `/_not-found` routes |
+| 2026-10-30 | F02–F06, F15 | Safari desktop visual/semantic review | Partial pass | Loader, Hero, nav, progress, spotlight, headings, and live ICT clock inspected; full mobile/deeper-section review pending |
+| 2026-10-30 | — | Initial code review / lint / typecheck / build / browser | Not run | Only documentation was prepared; live repo not inspected |
+
+When work begins, record actual commands and outputs (or concise paths to logs), affected browsers/screen sizes, and whether screenshots were compared to the relevant reference image.
+
+## 5. Session handoff (keep newest at top)
+
+### 2026-10-30 — F01–F16: local portfolio vertical slice
+
+- **Status:** Needs review
+- **Scope:** Phase 1 core plus Phase 2 signature UI/fallbacks; references 01–11
+- **Changed files:** `src/`, `package.json`, `package-lock.json`, `tsconfig.json`, `PROGRESS.md`; root `app/` migrated
+- **Implemented:** Typed content, responsive light/dark page, loader, Hero spotlight, glass nav, mini progress, editorial fallbacks, draggable skills, curved marquee, personality cards, chat Contact, and ICT footer.
+- **Verification:** Lint/typecheck/build pass. Safari desktop inspected; loader overlay lifecycle and direct-hash restoration were corrected from observed failures.
+- **Issues / deviations:** Personal content and verified links are absent; GitHub/Guestbook/Spotify remain honest unavailable states; mobile/browser/Lighthouse matrix not fully verified.
+- **Git checkpoint:** None
+- **Next action:** Add owner-verified content, then run responsive and reduced-motion QA at the required viewport matrix.
+
+### 2026-10-30 — Documentation baseline
+
+- **Task:** Establish persistent progress tracking for Codex.
+- **Result:** Prepared `PROGRESS.md`; added reading, updating, and verification rules to `AGENTS.md`.
+- **Source of truth:** `plan.md` remains the approved design specification.
+- **Changes to application code:** None.
+- **Checks:** Documentation integrity only; no application lint, tests, or build run.
+- **Blockers:** No live project state or personal data verified yet.
+- **Next:** Inspect the actual repository, compare with the tracker, then agree on the smallest implementation task.
+
+### Session entry template (copy for each new meaningful task)
+
+```md
+### YYYY-MM-DD — Fxx: short task name
+- **Status:** In progress / Needs review / Blocked / Done
+- **Scope:** approved requirement and reference images
+- **Changed files:** exact paths, or None
+- **Implemented:** short factual summary
+- **Verification:** commands + pass/fail/not run; browser/device/screenshots if applicable
+- **Issues / deviations:** what remains broken, unavailable, or different from plan
+- **Git checkpoint:** commit hash if the user approved a commit; otherwise None
+- **Next action:** one small, concrete task
+```
+
+## 6. Completion gate for every task
+
+Before moving any item to `Done`:
+
+- [ ] The implementation meets its task-specific criteria in `plan.md`.
+- [ ] Relevant lint, TypeScript, tests, and build checks were run **when applicable**; failures/blockers are disclosed.
+- [ ] Visual work was reviewed at a relevant desktop/mobile size against the matching `references/` image **when tooling is available**; otherwise marked `Needs review`.
+- [ ] Keyboard/touch/reduced-motion and regression risks were checked when relevant.
+- [ ] Git diff was reviewed and unrelated changes were not silently overwritten.
+- [ ] `PROGRESS.md` reflects the actual status, evidence, remaining issues, and next action.
+
