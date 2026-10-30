@@ -25,7 +25,7 @@ This is a **handoff and progress ledger**, not a replacement for the design spec
 | Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
 | Active task | **Needs review** — F06/F09/F13/F14 cursor boundary, Skills inventory, Spotify, and Contact refinements; mobile/reduced-motion review remains |
 | Last completed development task | **F09 SAA removal and F14 persistent reply indicator** |
-| Repo / Git status | Inspected; current interaction cleanup is ready for an authorized Git checkpoint; no secrets or new dependencies added |
+| Repo / Git status | Interaction cleanup committed locally at `e303ab5`; no secrets or new dependencies added |
 | App runtime / screenshots | Safari desktop Contact conversation and semantic Skills inventory inspected locally; Chrome/mobile cursor matrix remains pending |
 | Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
 | Design source | `plan.md`: 10 inspiration groups and approved layout/interaction contract |
@@ -103,7 +103,7 @@ When work begins, record actual commands and outputs (or concise paths to logs),
 - **Implemented:** Contact content is always present and followed by a right-aligned decorative typing bubble; SAA and the unused learning state/styles were removed while AWS remains; Spotify now toggles a native-cursor root state on pointer entry/exit.
 - **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop visually confirms Contact placement and the accessibility tree confirms 10 Skills without SAA and no decorative-dot announcement.
 - **Issues / deviations:** Mobile/reduced-motion visual review and hands-on Spotify cursor transition in Safari/Chrome remain pending because available UI automation could not perform a reliable hover/cross-browser pass.
-- **Git checkpoint:** Pending authorized commit/push for this session.
+- **Git checkpoint:** `e303ab5` (`fix: refine contact and embedded interactions`).
 - **Next action:** Perform a physical fine-pointer hover across the Spotify iframe boundary and complete the 320–768px viewport review.
 
 ### 2026-10-30 — F07, F11–F14: live personality cards and micro-interactions
