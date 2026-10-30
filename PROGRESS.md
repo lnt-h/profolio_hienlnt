@@ -98,7 +98,7 @@ When work begins, record actual commands and outputs (or concise paths to logs),
 - **Implemented:** Added typed groups/status/positions/accents; grouped Software, Engineering, DevOps, AWS, and SAA learning data; built a grid canvas with bounded Motion nodes, temporary flow cues, reduced-motion handling, and a semantic responsive inventory; added the Projects→Skills grid transition.
 - **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop visually confirmed the grid, grouped node hierarchy, SAA `In progress` card, and matching accessibility content.
 - **Issues / deviations:** 320–900px, touch drag, fine-pointer drag physics, and reduced-motion visual behavior still require device/browser QA; no certification claim or exam date was added.
-- **Git checkpoint:** None; commit/push not requested.
+- **Git checkpoint:** `b0da62f` (`feat: expand cloud and devops skills experience`).
 - **Next action:** Run the mobile/touch/reduced-motion viewport matrix and tune node positions only if observed clipping or gesture conflict appears.
 
 ### 2026-10-30 — F04, F06–F07: header, portrait, and cursor polish
