@@ -22,7 +22,10 @@ export function ProjectsSection() {
               <Reveal key={project.id} delay={index * 0.12}>
                 <article className="project-card">
                   {project.image && (
-                    <div className="project-visual-wrapper">
+                    <div
+                      className="project-visual-wrapper"
+                      style={project.brandColor ? { background: project.brandColor } : undefined}
+                    >
                       <div className="project-visual-container">
                         <Image
                           src={project.image}

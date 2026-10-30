@@ -6,7 +6,15 @@ export function HeroSection() {
     <section id="home" className="hero section-light" data-theme="light">
       <div className="hero-inner site-shell">
         <Reveal yOffset={16}>
-          <p className="terminal-eyebrow">{profile.eyebrow}</p>
+          <div className="hero-top-row">
+            <p className="terminal-eyebrow">{profile.eyebrow}</p>
+            {profile.availabilityStatus && (
+              <div className="availability-badge" data-cursor="interactive">
+                <span className="availability-pulse-dot" />
+                <span>{profile.availabilityStatus}</span>
+              </div>
+            )}
+          </div>
         </Reveal>
         <h1 className="hero-title" data-cursor="hero">
           {profile.statement.map((line) => <span key={line}>{line}</span>)}

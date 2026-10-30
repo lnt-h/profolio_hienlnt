@@ -22,6 +22,7 @@ export type Profile = {
   fullName: string;
   displayName: string;
   role: string;
+  availabilityStatus?: string;
   eyebrow: string;
   statement: readonly [string, string, string];
   shortBio: string;
@@ -38,6 +39,7 @@ export type Project = {
   stack: readonly string[];
   status: "In progress" | "Completed";
   image?: string;
+  brandColor?: string;
   links: readonly { label: string; href: string }[];
 };
 
@@ -64,6 +66,7 @@ export const profile: Profile = {
   fullName: "Lê Ngọc Tân Hiền",
   displayName: "Hien Le",
   role: "Software Engineer",
+  availabilityStatus: "Open to Software Engineer / Intern Opportunities",
   eyebrow: "$ whoami — Hien Le / Software Engineer",
   statement: ["I BUILD", "REAL-WORLD", "SOFTWARE."],
   shortBio:
@@ -97,6 +100,7 @@ export const projects: readonly Project[] = [
     stack: ["React Native", "Expo Router", "TypeScript", "Clerk Auth"],
     status: "In progress",
     image: "/images/gonarra-full.png",
+    brandColor: "linear-gradient(135deg, #131722 0%, #1c2237 50%, #201c2b 100%)",
     links: [
       { label: "GitHub Repository", href: "https://github.com/lnt-h/fyp_dana" },
       { label: "Figma Prototype", href: "https://www.figma.com/design/JvXw7rVf5KxoA6LlDJEqAt/Tourguide-app-UI" },
