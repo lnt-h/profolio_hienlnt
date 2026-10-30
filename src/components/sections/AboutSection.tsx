@@ -16,6 +16,7 @@ export function AboutSection() {
         <div className="about-grid">
           <Reveal delay={0.1}>
             <div className="portrait-frame">
+              <span className="portrait-corner-index" aria-hidden="true">02 / PROFILE</span>
               <Image
                 className="portrait-image"
                 src={profile.portrait.src}
@@ -25,6 +26,7 @@ export function AboutSection() {
                 priority={false}
                 style={{ "--portrait-position": profile.portrait.objectPosition, "--portrait-position-mobile": profile.portrait.mobileObjectPosition } as React.CSSProperties}
               />
+              <span className="portrait-vignette" aria-hidden="true" />
               <span className="portrait-label">Hien Le</span>
             </div>
             <div className="portrait-meta">

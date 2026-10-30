@@ -2,7 +2,7 @@
 
 > Project: **hienlnt.id.vn** — independent personal Software Engineer portfolio  
 > Last reviewed: **2026-10-30**  
-> Status: **Core local portfolio implemented; portrait and identity refinements added; verified links/projects and full responsive review pending**
+> Status: **Core local portfolio implemented; public GitHub activity, Spotify pick, and interaction refinements added; full responsive review pending**
 > Source of requirements: [`plan.md`](./plan.md) · Codex rules: [`AGENTS.md`](./AGENTS.md) · Visual references: [`references/`](./references/)
 
 ## 1. How to use this file
@@ -23,13 +23,13 @@ This is a **handoff and progress ledger**, not a replacement for the design spec
 | Field | Value |
 | --- | --- |
 | Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
-| Active task | **Needs review** — F09 grid-based Software → Cloud/DevOps skills experience; mobile/reduced-motion review and owner-verified links remain |
-| Last completed development task | **F09 engineering skills playground and AWS SAA learning state** |
-| Repo / Git status | Inspected; requested UI refinement is uncommitted; owner portrait preserved in `references/` and copied to production assets |
-| App runtime / screenshots | Safari desktop Hero, full-width progress, Download template, About portrait/signature, Behind cards, Contact semantics, and ICT clock inspected locally |
+| Active task | **Needs review** — F07/F11–F14 portrait, GitHub, Spotify, and Contact refinements; mobile/reduced-motion review remains |
+| Last completed development task | **F12 public GitHub activity and F13 Spotify embed integration** |
+| Repo / Git status | Inspected; GitHub/Spotify/Contact/portrait slice is uncommitted; no secrets or new dependencies added |
+| App runtime / screenshots | Safari desktop About portrait, GitHub activity, Spotify embed, Contact typing/reveal, and prior core sections inspected locally |
 | Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
 | Design source | `plan.md`: 10 inspiration groups and approved layout/interaction contract |
-| Next recommended action | Supply verified projects, email, GitHub, and LinkedIn; then complete mobile/browser/reduced-motion QA |
+| Next recommended action | Supply verified LinkedIn/project content, then complete mobile/browser/reduced-motion QA |
 
 ### Known inputs / open dependencies
 
@@ -53,14 +53,14 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 | F04 | 1 | Floating centered Apple-like glass navbar | Needs review | Desktop capsule/dropdown/active pill visible; complete keyboard/mobile scrollspy review pending |
 | F05 | 1 | Full-width top scroll progress, 3px | Needs review | Owner-approved contract update implemented; Safari desktop verified at top/mid/near-end positions; mobile browser review pending |
 | F06 | 1 | Adaptive inverted/zooming cursor | Needs review | Motion/CSS transform conflict removed; one theme-aware layer and native-cursor readiness class implemented; touch/reduced-motion matrix pending |
-| F07 | 1 | About Me / portrait / editorial layout | Needs review | Owner portrait, B&W editorial crop, and animated `hienlnt` sign-off integrated; final biography/mobile crop review pending |
+| F07 | 1 | About Me / portrait / editorial layout | Needs review | Owner portrait now uses intentional matte/double-frame/vignette treatment; final biography/mobile crop review pending |
 | F08 | 1 | Featured Projects | Blocked | Honest editorial empty state implemented; verified projects/media/links required |
 | F09 | 1 → 2 | Skills fallback, then draggable tech carousel | Needs review | Software/engineering/DevOps/cloud grid, bounded Motion nodes, semantic mobile inventory, and honest AWS SAA `In progress` state implemented; touch/reduced-motion QA pending |
 | F10 | 2 | Dark curved kinetic marquee | Needs review | Native curved SVG textPath and reduced-motion fallback implemented; visual loop QA pending |
-| F11 | 2 | Behind the Curtains card layout | Needs review | Three-card dark layout and honest empty states implemented; responsive visual pass pending |
-| F12 | 2 | GitHub public activity integration | Blocked | Verified GitHub URL absent; no API request or fake activity added |
-| F13 | 2 | Guestbook and Spotify connections | Needs review | Original static `hienlnt` signature mark added to Guestbook; Spotify remains honestly unconnected with no playback |
-| F14 | 1 | Minimal two-chat-bubble Contact | Blocked | Bubbles reduced and Email/GitHub/LinkedIn pending icons added without fake hrefs; verified links still required |
+| F11 | 2 | Behind the Curtains card layout | Needs review | Staggered three-card dark layout with live GitHub and official Spotify embed verified on Safari desktop; responsive pass pending |
+| F12 | 2 | GitHub public activity integration | Needs review | Public `lnt-h` profile/events fetched server-side with one-hour revalidation and honest empty/error fallbacks; failure-path/manual rate-limit QA pending |
+| F13 | 2 | Guestbook and Spotify connections | Needs review | Official lazy Spotify embed for `As It Was` added without autoplay; Guestbook remains intentionally disabled pending backend safeguards |
+| F14 | 1 | Minimal two-chat-bubble Contact | Needs review | One-time typing indicator reveals verified Email/GitHub actions; LinkedIn remains clearly pending; mobile/reduced-motion QA pending |
 | F15 | 1 | Footer with Vietnam date/live time/year | Done | Safari showed correct ICT date/time; static build has no hydration/current-time error |
 | F16 | 1 → 3 | Responsive, SEO, accessibility, performance | Needs review | Semantics, focus, reduced-motion CSS, metadata, breakpoints implemented; full audit pending |
 | F17 | 3 | Optional blue fluid 3D orb | Not started | **Optional only**, no baseline dependency |
@@ -72,6 +72,8 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 
 | Date (ICT) | Task ID | Check | Result | Evidence / notes |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | F07, F11–F14 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | ESLint/strict TypeScript pass; production build emits static `/` with one-hour revalidation and no required credentials |
+| 2026-10-30 | F07, F11–F14 | Safari desktop visual/semantic review | Partial pass | GitHub activity, Spotify player, Contact typing→response, verified actions, and editorial portrait frame rendered; mobile/reduced-motion not verified |
 | 2026-10-30 | F09 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | ESLint and strict TypeScript completed; production build emitted static `/` and `/_not-found` routes |
 | 2026-10-30 | F09 | Safari desktop visual/semantic review | Partial pass | Grid canvas, grouped nodes, Code→Build→Deploy→AWS cue, SAA learning card, and matching semantic inventory rendered; mobile/touch/reduced-motion remain unverified |
 | 2026-10-30 | F05–F07, F13–F14 | `npm run lint` | Pass | ESLint completed after the identity refinement with no warnings/errors |
@@ -89,6 +91,17 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 When work begins, record actual commands and outputs (or concise paths to logs), affected browsers/screen sizes, and whether screenshots were compared to the relevant reference image.
 
 ## 5. Session handoff (keep newest at top)
+
+### 2026-10-30 — F07, F11–F14: live personality cards and micro-interactions
+
+- **Status:** Needs review
+- **Scope:** Connect public GitHub activity, add the approved Spotify pick, refine Contact motion, and art-direct the existing owner portrait.
+- **Changed files:** `src/lib/github.ts`, focused Behind/Contact/About components, `src/content/site.ts`, `src/app/globals.css`, `next.config.ts`, `PROGRESS.md`
+- **Implemented:** Cached public GitHub profile/events with normalized fallback states; official lazy `As It Was` Spotify embed; staggered card/glow micro-interactions; one-time Contact typing reveal; editorial portrait matte, inset frame, vignette, and restrained hover movement.
+- **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop confirmed the live activity, iframe player without autoplay, typing transition, contact semantics, and portrait treatment.
+- **Issues / deviations:** GitHub failure/rate-limit path is code-reviewed but not forced in browser; 320–900px and reduced-motion visual review remain pending; LinkedIn and Guestbook remain intentionally unavailable.
+- **Git checkpoint:** None; commit/push not requested.
+- **Next action:** Run mobile/coarse-pointer/reduced-motion QA and add the verified LinkedIn URL when supplied.
 
 ### 2026-10-30 — F09: Software to Cloud/DevOps skills playground
 

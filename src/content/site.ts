@@ -65,6 +65,13 @@ export type IntegrationState<T> =
   | { status: "available"; data: T }
   | { status: Exclude<Availability, "available">; message: string };
 
+export type SpotifyTrack = {
+  title: string;
+  artist: string;
+  externalUrl: string;
+  embedUrl: string;
+};
+
 export const profile: Profile = {
   fullName: "Lê Ngọc Tân Hiền",
   displayName: "Hien Le",
@@ -91,6 +98,13 @@ export const profile: Profile = {
 export const templateDownload: TemplateDownload = {
   label: "Download template",
   href: "https://github.com/lnt-h/profolio_hienlnt",
+};
+
+export const spotifyTrack: SpotifyTrack = {
+  title: "As It Was",
+  artist: "Harry Styles",
+  externalUrl: "https://open.spotify.com/track/4Dvkj6JhhA12EX05fT7y2e",
+  embedUrl: "https://open.spotify.com/embed/track/4Dvkj6JhhA12EX05fT7y2e",
 };
 
 export const projects: readonly Project[] = [
@@ -134,9 +148,4 @@ export const navigation: readonly NavigationItem[] = [
   { label: "More", href: "#skills", matchSectionIds: ["skills", "more"], parentMenu: "more" },
   { label: "Contact", href: "#contact", matchSectionIds: ["contact"] },
 ];
-
-export const githubState = {
-  status: "unavailable",
-  message: "A verified GitHub profile has not been connected yet.",
-} satisfies IntegrationState<never>;
 
