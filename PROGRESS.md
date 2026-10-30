@@ -89,7 +89,7 @@ When work begins, record actual commands and outputs (or concise paths to logs),
 - **Implemented:** Typed content, responsive light/dark page, loader, Hero spotlight, glass nav, mini progress, editorial fallbacks, draggable skills, curved marquee, personality cards, chat Contact, and ICT footer.
 - **Verification:** Lint/typecheck/build pass. Safari desktop inspected; loader overlay lifecycle and direct-hash restoration were corrected from observed failures.
 - **Issues / deviations:** Personal content and verified links are absent; GitHub/Guestbook/Spotify remain honest unavailable states; mobile/browser/Lighthouse matrix not fully verified.
-- **Git checkpoint:** None
+- **Git checkpoint:** `df5b670` (`feat: build portfolio experience`)
 - **Next action:** Add owner-verified content, then run responsive and reduced-motion QA at the required viewport matrix.
 
 ### 2026-10-30 — Documentation baseline
