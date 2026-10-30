@@ -54,7 +54,30 @@ export function AdaptiveCursor() {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle("custom-cursor-ready", enabled);
-    return () => root.classList.remove("custom-cursor-ready");
+    if (!enabled) return;
+
+    const nativeCursorZones = document.querySelectorAll<HTMLElement>("[data-native-cursor]");
+    const enterNativeZone = () => {
+      root.classList.add("custom-cursor-native-zone");
+      setVariant("hidden");
+    };
+    const leaveNativeZone = () => {
+      root.classList.remove("custom-cursor-native-zone");
+      setVariant("default");
+    };
+
+    nativeCursorZones.forEach((zone) => {
+      zone.addEventListener("pointerenter", enterNativeZone);
+      zone.addEventListener("pointerleave", leaveNativeZone);
+    });
+
+    return () => {
+      nativeCursorZones.forEach((zone) => {
+        zone.removeEventListener("pointerenter", enterNativeZone);
+        zone.removeEventListener("pointerleave", leaveNativeZone);
+      });
+      root.classList.remove("custom-cursor-ready", "custom-cursor-native-zone");
+    };
   }, [enabled]);
 
   if (!enabled) return null;

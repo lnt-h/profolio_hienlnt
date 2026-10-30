@@ -8,7 +8,7 @@ const groupLabels: Record<Skill["group"], string> = {
   software: "Software Engineering",
   engineering: "Engineering Core",
   devops: "Delivery & DevOps",
-  cloud: "Cloud & Learning",
+  cloud: "Cloud",
 };
 
 export function DraggableSkillField({ skills }: { skills: readonly Skill[] }) {
@@ -26,7 +26,7 @@ export function DraggableSkillField({ skills }: { skills: readonly Skill[] }) {
         <div className="skill-grid-glow" />
         <div className="skill-group-label label-software">Software Engineering</div>
         <div className="skill-group-label label-delivery">Delivery &amp; DevOps</div>
-        <div className="skill-group-label label-cloud">Cloud &amp; Learning</div>
+        <div className="skill-group-label label-cloud">Cloud</div>
         <svg className="skill-flow" viewBox="0 0 1000 590" preserveAspectRatio="none">
           <path d="M140 160 C300 90 390 250 500 260 S690 120 800 200 S870 360 900 420" />
           <path d="M220 420 C380 500 510 430 625 350 S775 315 875 455" />
@@ -34,7 +34,7 @@ export function DraggableSkillField({ skills }: { skills: readonly Skill[] }) {
         {skills.map((skill, index) => (
           <motion.div
             key={skill.id}
-            className={`skill-bubble skill-${skill.group} accent-${skill.accent}${skill.status === "learning" ? " skill-learning" : ""}${activeSkill === skill.id ? " is-active" : ""}`}
+            className={`skill-bubble skill-${skill.group} accent-${skill.accent}${activeSkill === skill.id ? " is-active" : ""}`}
             style={{
               "--skill-x": `${skill.position.x}%`,
               "--skill-y": `${skill.position.y}%`,
@@ -57,17 +57,15 @@ export function DraggableSkillField({ skills }: { skills: readonly Skill[] }) {
           >
             <span className="skill-icon">{skill.icon}</span>
             <span>{skill.name}</span>
-            {skill.status === "learning" && <span className="skill-status">In progress</span>}
           </motion.div>
         ))}
         <p className="skill-instruction"><span>Code</span> → <span>Build</span> → <span>Deploy</span> → <span>AWS</span><br />Poke · Drag · Flick</p>
       </div>
       <ul className="skill-list" aria-label="Software engineering, DevOps, and cloud technology inventory">
         {skills.map((skill) => (
-          <li key={skill.id} className={skill.status === "learning" ? "is-learning" : undefined}>
+          <li key={skill.id}>
             <div className="skill-list-heading">
               <strong>{skill.name}</strong>
-              {skill.status === "learning" && <span className="skill-list-status">In progress</span>}
             </div>
             <span>{skill.context}</span>
             <small>{groupLabels[skill.group]}</small>

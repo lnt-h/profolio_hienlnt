@@ -102,7 +102,7 @@ button { font: inherit; }
   mix-blend-mode: multiply; 
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  html.custom-cursor-ready, html.custom-cursor-ready * { cursor: none !important; }
+  html.custom-cursor-ready:not(.custom-cursor-native-zone), html.custom-cursor-ready:not(.custom-cursor-native-zone) * { cursor: none !important; }
 }
 
 /* Hero */
@@ -336,11 +336,6 @@ button { font: inherit; }
 .accent-gold { --skill-accent: #efbd37; }
 .skill-icon { color: var(--skill-accent); font: 750 1rem/1 var(--font-geist-mono), monospace; }
 .skill-bubble > span:nth-child(2) { max-width: 108px; font-size: clamp(0.68rem, 0.82vw, 0.82rem); font-weight: 700; line-height: 1.15; }
-.skill-learning { width: clamp(190px, 19vw, 268px); aspect-ratio: auto; min-height: 112px; border-radius: 24px; padding: 18px 22px; }
-.skill-learning::after { content: ""; position: absolute; inset: -7px; z-index: -1; border: 1px solid rgb(239 189 55 / 0.34); border-radius: 30px; animation: learning-pulse 3.4s ease-in-out infinite; }
-.skill-learning > span:nth-child(2) { max-width: 220px; }
-.skill-status { color: #e9bd4d; font: 650 0.58rem/1 var(--font-geist-mono), monospace; letter-spacing: 0.13em; text-transform: uppercase; }
-@keyframes learning-pulse { 0%, 100% { opacity: 0.28; transform: scale(0.985); } 50% { opacity: 0.78; transform: scale(1.015); } }
 .skill-instruction { position: absolute; bottom: 25px; left: 50%; z-index: 1; width: max-content; margin: 0; transform: translateX(-50%); color: #666a76; font: 500 0.64rem/1.85 var(--font-geist-mono), monospace; letter-spacing: 0.2em; text-align: center; text-transform: uppercase; pointer-events: none; }
 .skill-instruction span { color: #9b9eaa; }
 .skill-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 32px 0 0; padding: 1px; background: #24252a; list-style: none; }
@@ -348,8 +343,6 @@ button { font: inherit; }
 .skill-list-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
 .skill-list span { color: #919198; font-size: 0.78rem; line-height: 1.45; }
 .skill-list small { margin-top: auto; color: #5f626b; font: 600 0.6rem/1.3 var(--font-geist-mono), monospace; letter-spacing: 0.08em; text-transform: uppercase; }
-.skill-list .skill-list-status { flex: 0 0 auto; border: 1px solid rgb(239 189 55 / 0.38); border-radius: 999px; padding: 4px 7px; color: #e8bd4e; font: 650 0.55rem/1 var(--font-geist-mono), monospace; letter-spacing: 0.06em; text-transform: uppercase; }
-.skill-list li.is-learning { grid-column: span 2; background: linear-gradient(135deg, rgb(239 189 55 / 0.08), transparent 55%), var(--dark); }
 .marquee-section { min-height: 520px; overflow: hidden; }
 .curved-marquee { width: max(1450px, 116vw); height: auto; margin-left: 50%; transform: translateX(-50%); overflow: visible; }
 .curved-marquee text { fill: white; font: 800 7.8rem/1 var(--font-manrope), sans-serif; letter-spacing: -0.04em; }
@@ -410,10 +403,11 @@ button { font: inherit; }
 .outgoing { margin-left: auto; border-bottom-right-radius: 7px; background: var(--blue); color: white; }
 .incoming { margin-top: 16px; border-bottom-left-radius: 7px; background: #ebeae8; }
 .contact-response { transition: opacity 180ms ease, transform 180ms ease; }
-.contact-response.is-waiting { position: absolute; opacity: 0; transform: translateY(5px); pointer-events: none; }
 .typing-bubble { display: flex; width: 62px; min-height: 45px; align-items: center; justify-content: center; gap: 5px; }
 .typing-bubble i { width: 6px; height: 6px; border-radius: 50%; background: #85817e; animation: typing-dot 700ms ease-in-out infinite alternate; }
 .typing-bubble i:nth-child(2) { animation-delay: 120ms; }.typing-bubble i:nth-child(3) { animation-delay: 240ms; }
+.reply-wait { margin-top: 16px; padding-inline: 15px; }
+.reply-wait i { background: rgb(255 255 255 / 0.9); }
 @keyframes typing-dot { to { opacity: 0.34; transform: translateY(-3px); } }
 .contact-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .contact-actions a, .contact-action { display: inline-flex; min-height: 36px; align-items: center; gap: 7px; border: 1px solid #cbc8c5; border-radius: 999px; padding: 7px 10px; background: rgb(255 255 255 / 0.58); font-size: 0.74rem; font-weight: 700; }
@@ -481,7 +475,6 @@ button { font: inherit; }
   .dark-heading-row h2 { font-size: clamp(2.8rem, 13vw, 4rem); }
   .skill-list { margin-top: 42px; }
   .skill-list { grid-template-columns: 1fr; }
-  .skill-list li.is-learning { grid-column: auto; }
   .curved-marquee { width: 1500px; }
   .marquee-section { min-height: 400px; }
   .behind { padding-block: 50px 100px; }
@@ -497,7 +490,6 @@ button { font: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
   .curved-marquee animate { display: none; }
-  .skill-learning::after { animation: none; opacity: 0.5; }
   .skill-flow { display: none; }
   .github-activity-line i, .typing-bubble i, .spotify-card:hover .sound-bars i, .spotify-card:focus-within .sound-bars i { animation: none; }
   .personality-card:hover, .personality-card:focus-within { transform: none; }

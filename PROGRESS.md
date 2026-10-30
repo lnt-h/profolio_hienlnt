@@ -1,7 +1,7 @@
 # HIENLNT Portfolio — Development Progress
 
 > Project: **hienlnt.id.vn** — independent personal Software Engineer portfolio  
-> Last reviewed: **2026-10-30**  
+> Last reviewed: **2026-10-31**
 > Status: **Core local portfolio implemented; public GitHub activity, Spotify pick, and interaction refinements added; full responsive review pending**
 > Source of requirements: [`plan.md`](./plan.md) · Codex rules: [`AGENTS.md`](./AGENTS.md) · Visual references: [`references/`](./references/)
 
@@ -23,10 +23,10 @@ This is a **handoff and progress ledger**, not a replacement for the design spec
 | Field | Value |
 | --- | --- |
 | Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
-| Active task | **Needs review** — F07/F11–F14 portrait, GitHub, Spotify, and Contact refinements; mobile/reduced-motion review remains |
-| Last completed development task | **F12 public GitHub activity and F13 Spotify embed integration** |
-| Repo / Git status | Inspected; GitHub/Spotify/Contact/portrait slice is uncommitted; no secrets or new dependencies added |
-| App runtime / screenshots | Safari desktop About portrait, GitHub activity, Spotify embed, Contact typing/reveal, and prior core sections inspected locally |
+| Active task | **Needs review** — F06/F09/F13/F14 cursor boundary, Skills inventory, Spotify, and Contact refinements; mobile/reduced-motion review remains |
+| Last completed development task | **F09 SAA removal and F14 persistent reply indicator** |
+| Repo / Git status | Inspected; current interaction cleanup is ready for an authorized Git checkpoint; no secrets or new dependencies added |
+| App runtime / screenshots | Safari desktop Contact conversation and semantic Skills inventory inspected locally; Chrome/mobile cursor matrix remains pending |
 | Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
 | Design source | `plan.md`: 10 inspiration groups and approved layout/interaction contract |
 | Next recommended action | Supply verified LinkedIn/project content, then complete mobile/browser/reduced-motion QA |
@@ -52,15 +52,15 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 | F03 | 1 | Hero, oversized typography, gold spotlight | Needs review | Desktop Safari visual checked against references; mobile visual review pending |
 | F04 | 1 | Floating centered Apple-like glass navbar | Needs review | Desktop capsule/dropdown/active pill visible; complete keyboard/mobile scrollspy review pending |
 | F05 | 1 | Full-width top scroll progress, 3px | Needs review | Owner-approved contract update implemented; Safari desktop verified at top/mid/near-end positions; mobile browser review pending |
-| F06 | 1 | Adaptive inverted/zooming cursor | Needs review | Motion/CSS transform conflict removed; one theme-aware layer and native-cursor readiness class implemented; touch/reduced-motion matrix pending |
+| F06 | 1 | Adaptive inverted/zooming cursor | Needs review | One theme-aware layer plus native-cursor zones for cross-origin embeds implemented; Chrome/Safari pointer-transition and touch/reduced-motion matrix pending |
 | F07 | 1 | About Me / portrait / editorial layout | Needs review | Owner portrait now uses intentional matte/double-frame/vignette treatment; final biography/mobile crop review pending |
 | F08 | 1 | Featured Projects | Blocked | Honest editorial empty state implemented; verified projects/media/links required |
-| F09 | 1 → 2 | Skills fallback, then draggable tech carousel | Needs review | Software/engineering/DevOps/cloud grid, bounded Motion nodes, semantic mobile inventory, and honest AWS SAA `In progress` state implemented; touch/reduced-motion QA pending |
+| F09 | 1 → 2 | Skills fallback, then draggable tech carousel | Needs review | Software/engineering/DevOps/cloud grid, bounded Motion nodes, and 10-item semantic inventory implemented; owner-requested SAA learning item removed; touch/reduced-motion QA pending |
 | F10 | 2 | Dark curved kinetic marquee | Needs review | Native curved SVG textPath and reduced-motion fallback implemented; visual loop QA pending |
 | F11 | 2 | Behind the Curtains card layout | Needs review | Staggered three-card dark layout with live GitHub and official Spotify embed verified on Safari desktop; responsive pass pending |
 | F12 | 2 | GitHub public activity integration | Needs review | Public `lnt-h` profile/events fetched server-side with one-hour revalidation and honest empty/error fallbacks; failure-path/manual rate-limit QA pending |
-| F13 | 2 | Guestbook and Spotify connections | Needs review | Official lazy Spotify embed for `As It Was` added without autoplay; Guestbook remains intentionally disabled pending backend safeguards |
-| F14 | 1 | Minimal two-chat-bubble Contact | Needs review | One-time typing indicator reveals verified Email/GitHub actions; LinkedIn remains clearly pending; mobile/reduced-motion QA pending |
+| F13 | 2 | Guestbook and Spotify connections | Needs review | Official lazy Spotify embed for `As It Was` added without autoplay and marked as a native-cursor zone; pointer transition still needs hands-on cross-browser confirmation |
+| F14 | 1 | Minimal two-chat-bubble Contact | Needs review | Verified Email/GitHub response remains immediately available; a decorative persistent reply-wait bubble follows it; LinkedIn remains clearly pending; mobile/reduced-motion QA pending |
 | F15 | 1 | Footer with Vietnam date/live time/year | Done | Safari showed correct ICT date/time; static build has no hydration/current-time error |
 | F16 | 1 → 3 | Responsive, SEO, accessibility, performance | Needs review | Semantics, focus, reduced-motion CSS, metadata, breakpoints implemented; full audit pending |
 | F17 | 3 | Optional blue fluid 3D orb | Not started | **Optional only**, no baseline dependency |
@@ -72,6 +72,9 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 
 | Date (ICT) | Task ID | Check | Result | Evidence / notes |
 | --- | --- | --- | --- | --- |
+| 2026-10-31 | F06, F09, F13–F14 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | ESLint/strict TypeScript pass; production build emits static `/` with one-hour revalidation |
+| 2026-10-31 | F09, F14 | Safari desktop visual/semantic review | Partial pass | Contact renders question → contact response → right-aligned reply-wait bubble; decorative dots stay out of the accessibility tree; semantic Skills inventory contains 10 items with AWS retained and no SAA entry |
+| 2026-10-31 | F06, F13 | Spotify cursor review | Needs review | Native-cursor zone and cleanup code verified; browser automation could not reliably retain Chrome focus and CUA cannot hover without a click, so Safari/Chrome pointer-boundary behavior remains hands-on QA |
 | 2026-10-30 | F07, F11–F14 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | ESLint/strict TypeScript pass; production build emits static `/` with one-hour revalidation and no required credentials |
 | 2026-10-30 | F07, F11–F14 | Safari desktop visual/semantic review | Partial pass | GitHub activity, Spotify player, Contact typing→response, verified actions, and editorial portrait frame rendered; mobile/reduced-motion not verified |
 | 2026-10-30 | F09 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | ESLint and strict TypeScript completed; production build emitted static `/` and `/_not-found` routes |
@@ -91,6 +94,17 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 When work begins, record actual commands and outputs (or concise paths to logs), affected browsers/screen sizes, and whether screenshots were compared to the relevant reference image.
 
 ## 5. Session handoff (keep newest at top)
+
+### 2026-10-31 — F06, F09, F13–F14: contact reply, Skills cleanup, and Spotify cursor boundary
+
+- **Status:** Needs review
+- **Scope:** Add the owner-approved reply-wait bubble, remove the SAA learning claim, and keep pointer interaction usable inside the cross-origin Spotify player.
+- **Changed files:** `src/components/contact/ContactExperience.tsx`, `src/components/motion/AdaptiveCursor.tsx`, `src/components/sections/BehindSection.tsx`, `src/components/skills/DraggableSkillField.tsx`, `src/content/site.ts`, `src/app/globals.css`, `PROGRESS.md`
+- **Implemented:** Contact content is always present and followed by a right-aligned decorative typing bubble; SAA and the unused learning state/styles were removed while AWS remains; Spotify now toggles a native-cursor root state on pointer entry/exit.
+- **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop visually confirms Contact placement and the accessibility tree confirms 10 Skills without SAA and no decorative-dot announcement.
+- **Issues / deviations:** Mobile/reduced-motion visual review and hands-on Spotify cursor transition in Safari/Chrome remain pending because available UI automation could not perform a reliable hover/cross-browser pass.
+- **Git checkpoint:** Pending authorized commit/push for this session.
+- **Next action:** Perform a physical fine-pointer hover across the Spotify iframe boundary and complete the 320–768px viewport review.
 
 ### 2026-10-30 — F07, F11–F14: live personality cards and micro-interactions
 

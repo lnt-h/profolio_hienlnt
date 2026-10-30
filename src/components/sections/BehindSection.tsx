@@ -33,6 +33,7 @@ export function BehindSection() {
               <div className="sound-bars" aria-hidden="true"><i /><i /><i /><i /><i /></div>
               <iframe
                 className="spotify-embed"
+                data-native-cursor
                 src={spotifyTrack.embedUrl}
                 title={`${spotifyTrack.title} by ${spotifyTrack.artist} on Spotify`}
                 loading="lazy"
