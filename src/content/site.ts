@@ -87,7 +87,22 @@ export const templateDownload: TemplateDownload = {
   href: "https://github.com/lnt-h/profolio_hienlnt",
 };
 
-export const projects: readonly Project[] = [];
+export const projects: readonly Project[] = [
+  {
+    id: "gonarra",
+    title: "Gonarra — Audio-first Tour Guide in Da Nang",
+    summary:
+      "A location-aware, audio-first mobile companion for international visitors to discover Da Nang through curated walking stops, local cultural stories, and authentic experiences. Built as my final year engineering project.",
+    role: "Solo Mobile & Product Engineer (Final Year Project)",
+    stack: ["React Native", "Expo Router", "TypeScript", "Clerk Auth"],
+    status: "In progress",
+    image: "/images/gonarra-preview.png",
+    links: [
+      { label: "GitHub Repository", href: "https://github.com/lnt-h/fyp_dana" },
+      { label: "Figma Prototype", href: "https://www.figma.com/design/JvXw7rVf5KxoA6LlDJEqAt/Tourguide-app-UI" },
+    ],
+  },
+];
 
 // These labels describe the technology used to build this portfolio itself.
 // Replace or extend only when the owner supplies a verified personal skill inventory.
