@@ -356,11 +356,14 @@ button { font: inherit; }
   .mobile-menu a { border-radius: 14px; padding: 13px 14px; }
   .mobile-menu a:hover, .mobile-menu a:focus-visible { background: #292929; }
   .template-download { display: none; }
+  .hero-top-row { gap: 14px; margin-bottom: 24px; }
   .hero-title { font-size: clamp(3.5rem, 15vw, 7.6rem); }
   .about-grid, .projects-header, .dark-heading-row { grid-template-columns: 1fr; }
   .about-grid { margin-top: 70px; }
   .portrait-frame { max-width: 560px; }
   .portrait-image { object-position: var(--portrait-position-mobile); }
+  .project-card { padding: 24px 20px; }
+  .project-links { gap: 10px; }
   .projects-empty { grid-template-columns: 1fr; min-height: 360px; }
   .projects-empty > p { max-width: 470px; }
   .skill-field { height: 530px; }
@@ -372,15 +375,29 @@ button { font: inherit; }
 @media (max-width: 560px) {
   :root { --shell: calc(100% - 32px); }
   .hero-inner { justify-content: flex-end; padding-top: 130px; }
-  .terminal-eyebrow { max-width: 280px; font-size: 0.66rem; }
+  .hero-top-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .terminal-eyebrow { max-width: 100%; font-size: 0.68rem; }
+  .availability-badge { font-size: 0.7rem; padding: 6px 12px; width: max-content; }
   .hero-title { font-size: clamp(3rem, 16.4vw, 5.5rem); line-height: 0.88; letter-spacing: -0.07em; }
   .hero-foot { align-items: flex-start; flex-direction: column; margin-top: 34px; }
-  .about, .projects { padding-block: 92px; }
+  .about, .projects { padding-block: 84px; }
   .about-heading span, .about-heading h2 { font-size: clamp(2.6rem, 12vw, 4rem); }
   .portrait-frame { box-shadow: 10px 10px 0 #555; }
-  .projects-header h2 { font-size: clamp(3.1rem, 15vw, 5rem); }
-  .skills { padding-top: 95px; }
-  .skill-field { height: 610px; margin-top: 46px; }
+  .project-grid { margin-top: 48px; }
+  .project-card { padding: 16px; border-radius: 22px; gap: 20px; }
+  .project-visual-wrapper { border-radius: 14px; }
+  .project-hd-image { max-height: 360px; }
+  .project-meta-row { gap: 10px; }
+  .project-status-badge { font-size: 0.68rem; padding: 3px 10px; }
+  .project-role { font-size: 0.76rem; }
+  .project-card-copy h3 { font-size: 1.6rem; }
+  .project-card-copy p { font-size: 0.96rem; line-height: 1.55; }
+  .tech-tag { font-size: 0.72rem; padding: 4px 10px; }
+  .project-links { flex-direction: column; width: 100%; }
+  .project-action-btn { justify-content: center; width: 100%; padding: 12px; }
+  .projects-header h2 { font-size: clamp(2.8rem, 14vw, 4.2rem); }
+  .skills { padding-top: 85px; }
+  .skill-field { height: 610px; margin-top: 40px; }
   .skill-bubble { width: 126px; }
   .bubble-1 { left: 5%; top: 9%; }.bubble-2 { left: 48%; top: 23%; }.bubble-3 { left: 8%; top: 38%; }.bubble-4 { right: 7%; top: 54%; }.bubble-5 { left: 12%; top: 70%; }
   .skill-list { grid-template-columns: 1fr; }
