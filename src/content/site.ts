@@ -96,7 +96,7 @@ export const projects: readonly Project[] = [
     role: "Solo Mobile & Product Engineer (Final Year Project)",
     stack: ["React Native", "Expo Router", "TypeScript", "Clerk Auth"],
     status: "In progress",
-    image: "/images/gonarra-preview.png",
+    image: "/images/gonarra-full.png",
     links: [
       { label: "GitHub Repository", href: "https://github.com/lnt-h/fyp_dana" },
       { label: "Figma Prototype", href: "https://www.figma.com/design/JvXw7rVf5KxoA6LlDJEqAt/Tourguide-app-UI" },

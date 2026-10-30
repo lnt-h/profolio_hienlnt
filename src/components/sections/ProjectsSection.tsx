@@ -15,21 +15,24 @@ export function ProjectsSection() {
             <p>Thoughtfully engineered applications, built to solve tangible problems for real users.</p>
           </div>
         </Reveal>
+
         {projects.length > 0 ? (
           <div className="project-grid">
             {projects.map((project, index) => (
-              <Reveal key={project.id} delay={index * 0.1}>
+              <Reveal key={project.id} delay={index * 0.12}>
                 <article className="project-card">
                   {project.image && (
-                    <div className="project-visual">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="project-image"
-                        sizes="(max-width: 900px) 100vw, 85vw"
-                        priority
-                      />
+                    <div className="project-visual-wrapper">
+                      <div className="project-visual-container">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={1920}
+                          height={1440}
+                          className="project-hd-image"
+                          priority={index === 0}
+                        />
+                      </div>
                     </div>
                   )}
                   <div className="project-card-copy">
