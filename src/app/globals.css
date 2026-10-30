@@ -96,8 +96,8 @@ button { font: inherit; }
 .section-heading h2 { font-weight: 750; }
 .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(60px, 8vw, 130px); align-items: center; margin-top: 100px; }
 .portrait-frame { position: relative; aspect-ratio: 1 / 1.06; display: grid; place-items: center; border: 2px solid var(--ink); background: linear-gradient(145deg, #eeeae6, #b7b3af); box-shadow: 18px 18px 0 #555; overflow: hidden; }
-.portrait-image { object-fit: cover; object-position: var(--portrait-position); filter: grayscale(1) contrast(1.04); transition: filter 350ms ease, transform 500ms ease; }
-.portrait-frame:hover .portrait-image { filter: grayscale(0.18) contrast(1.02); transform: scale(1.015); }
+.portrait-image { object-fit: cover; object-position: var(--portrait-position); filter: none; transition: transform 500ms ease; }
+.portrait-frame:hover .portrait-image { transform: scale(1.02); }
 .portrait-label { position: absolute; top: -1px; left: -1px; border: 2px solid var(--ink); padding: 11px 15px; background: white; font: 700 0.78rem/1 var(--font-geist-mono), monospace; text-transform: uppercase; }
 .portrait-meta { display: flex; flex-direction: column; margin-top: 42px; font-size: 1.1rem; }
 .portrait-meta span { color: var(--muted); }

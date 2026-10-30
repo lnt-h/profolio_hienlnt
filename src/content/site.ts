@@ -84,7 +84,7 @@ export const profile: Profile = {
 
 export const templateDownload: TemplateDownload = {
   label: "Download template",
-  href: "https://github.com/lnt-h/profolio_hienlnt/archive/refs/heads/main.zip",
+  href: "https://github.com/lnt-h/profolio_hienlnt",
 };
 
 export const projects: readonly Project[] = [];

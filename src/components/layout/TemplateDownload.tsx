@@ -5,7 +5,9 @@ export function TemplateDownload() {
     <a
       className="template-download"
       href={templateDownload.href}
-      aria-label="Download the hienlnt portfolio template as a ZIP file"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="View or clone the hienlnt portfolio repository on GitHub"
       data-cursor="interactive"
     >
       <svg viewBox="0 0 20 20" aria-hidden="true">

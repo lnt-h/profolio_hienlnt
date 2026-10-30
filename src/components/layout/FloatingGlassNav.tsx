@@ -133,8 +133,14 @@ export function FloatingGlassNav() {
             {navigation.map((item) => (
               <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
             ))}
-            <a className="mobile-template-link" href={templateDownload.href} onClick={() => setMenuOpen(false)}>
-              Download template <span aria-hidden="true">↓</span>
+            <a
+              className="mobile-template-link"
+              href={templateDownload.href}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setMenuOpen(false)}
+            >
+              Download template <span aria-hidden="true">↗</span>
             </a>
           </motion.div>
         )}
