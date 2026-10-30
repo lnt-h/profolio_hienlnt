@@ -100,7 +100,7 @@ export const projects: readonly Project[] = [
     stack: ["React Native", "Expo Router", "TypeScript", "Clerk Auth"],
     status: "In progress",
     image: "/images/gonarra-full.png",
-    brandColor: "linear-gradient(135deg, #131722 0%, #1c2237 50%, #201c2b 100%)",
+    brandColor: "linear-gradient(145deg, #18191c 0%, #0d0e11 100%)",
     links: [
       { label: "GitHub Repository", href: "https://github.com/lnt-h/fyp_dana" },
       { label: "Figma Prototype", href: "https://www.figma.com/design/JvXw7rVf5KxoA6LlDJEqAt/Tourguide-app-UI" },

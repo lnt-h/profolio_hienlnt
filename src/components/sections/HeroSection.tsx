@@ -11,6 +11,7 @@ export function HeroSection() {
             {profile.availabilityStatus && (
               <div className="availability-badge" data-cursor="interactive">
                 <span className="availability-pulse-dot" />
+                <span className="availability-status-tag">Active</span>
                 <span>{profile.availabilityStatus}</span>
               </div>
             )}
