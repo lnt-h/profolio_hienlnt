@@ -71,10 +71,35 @@ button { font: inherit; }
 .mobile-template-link span { float: right; }
 
 /* Cursor */
-.adaptive-cursor { position: fixed; top: 0; left: 0; z-index: 140; border-radius: 50%; pointer-events: none; translate: -50% -50%; background: var(--ink); box-shadow: 0 0 0 1px rgb(255 255 255 / 0.18); will-change: transform, width, height; }
-.adaptive-cursor.cursor-theme-dark { background: white; box-shadow: 0 0 0 1px rgb(0 0 0 / 0.4); }
-.adaptive-cursor.cursor-interactive { background: rgb(239 189 55 / 0.88); box-shadow: 0 0 0 1px rgb(17 17 17 / 0.16), 0 8px 28px rgb(221 169 26 / 0.2); }
-.adaptive-cursor.cursor-hero { background: rgb(239 189 55 / 0.9); box-shadow: 0 0 0 1px rgb(17 17 17 / 0.1), 0 18px 60px rgb(221 169 26 / 0.22); mix-blend-mode: multiply; }
+.adaptive-cursor { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 140; 
+  border-radius: 50%; 
+  pointer-events: none; 
+  translate: -50% -50%; 
+  background: var(--ink); 
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.18); 
+  will-change: transform, width, height; 
+}
+.adaptive-cursor.cursor-theme-dark { 
+  background: #ffffff !important; 
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.9) !important; 
+}
+.adaptive-cursor.cursor-interactive { 
+  background: rgb(239 189 55 / 0.88); 
+  box-shadow: 0 0 0 1px rgb(17 17 17 / 0.16), 0 8px 28px rgb(221 169 26 / 0.2); 
+}
+.adaptive-cursor.cursor-interactive.cursor-theme-dark {
+  background: #facc15 !important;
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+}
+.adaptive-cursor.cursor-hero { 
+  background: rgb(239 189 55 / 0.9); 
+  box-shadow: 0 0 0 1px rgb(17 17 17 / 0.1), 0 18px 60px rgb(221 169 26 / 0.22); 
+  mix-blend-mode: multiply; 
+}
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   html.custom-cursor-ready, html.custom-cursor-ready * { cursor: none !important; }
 }

@@ -24,11 +24,16 @@ export function AdaptiveCursor() {
     const onMove = (event: PointerEvent) => {
       rawX.set(event.clientX);
       rawY.set(event.clientY);
-      const target = event.target as HTMLElement;
-      const sectionTheme = target.closest<HTMLElement>("[data-theme]")?.dataset.theme;
+      
+      // Determine theme under cursor by checking element directly under cursor:
+      const elementUnderCursor = document.elementFromPoint(event.clientX, event.clientY);
+      const target = (elementUnderCursor as HTMLElement) || (event.target as HTMLElement);
+      
+      const sectionTheme = target?.closest<HTMLElement>("[data-theme]")?.dataset.theme;
       setTheme(sectionTheme === "dark" ? "dark" : "light");
-      if (target.closest("[data-cursor='hero']")) setVariant("hero");
-      else if (target.closest("a, button, [data-cursor='interactive']")) setVariant("interactive");
+      
+      if (target?.closest("[data-cursor='hero']")) setVariant("hero");
+      else if (target?.closest("a, button, [data-cursor='interactive']")) setVariant("interactive");
       else setVariant("default");
     };
     const onLeave = () => setVariant("hidden");

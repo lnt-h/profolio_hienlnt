@@ -99,8 +99,8 @@ export const projects: readonly Project[] = [
     role: "Solo Mobile & Product Engineer (Final Year Project)",
     stack: ["React Native", "Expo Router", "TypeScript", "Clerk Auth"],
     status: "In progress",
-    image: "/images/gonarra-full.png",
-    brandColor: "linear-gradient(145deg, #18191c 0%, #0d0e11 100%)",
+    image: "/images/gonarra-app.png",
+    brandColor: "linear-gradient(145deg, #182232 0%, #0e1624 50%, #151d2a 100%)",
     links: [
       { label: "GitHub Repository", href: "https://github.com/lnt-h/fyp_dana" },
       { label: "Figma Prototype", href: "https://www.figma.com/design/JvXw7rVf5KxoA6LlDJEqAt/Tourguide-app-UI" },
