@@ -100,7 +100,7 @@ When work begins, record actual commands and outputs (or concise paths to logs),
 - **Implemented:** Cached public GitHub profile/events with normalized fallback states; official lazy `As It Was` Spotify embed; staggered card/glow micro-interactions; one-time Contact typing reveal; editorial portrait matte, inset frame, vignette, and restrained hover movement.
 - **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop confirmed the live activity, iframe player without autoplay, typing transition, contact semantics, and portrait treatment.
 - **Issues / deviations:** GitHub failure/rate-limit path is code-reviewed but not forced in browser; 320–900px and reduced-motion visual review remain pending; LinkedIn and Guestbook remain intentionally unavailable.
-- **Git checkpoint:** None; commit/push not requested.
+- **Git checkpoint:** `5ddcb26` (`feat: connect activity and personality integrations`).
 - **Next action:** Run mobile/coarse-pointer/reduced-motion QA and add the verified LinkedIn URL when supplied.
 
 ### 2026-10-30 — F09: Software to Cloud/DevOps skills playground
