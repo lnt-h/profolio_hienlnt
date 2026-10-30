@@ -23,8 +23,8 @@ This is a **handoff and progress ledger**, not a replacement for the design spec
 | Field | Value |
 | --- | --- |
 | Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
-| Active task | **Needs review** — responsive review of the portrait/signature/cursor refinement and owner-verified links |
-| Last completed development task | **F05 full-width progress and identity refinement slice** |
+| Active task | **Needs review** — F09 grid-based Software → Cloud/DevOps skills experience; mobile/reduced-motion review and owner-verified links remain |
+| Last completed development task | **F09 engineering skills playground and AWS SAA learning state** |
 | Repo / Git status | Inspected; requested UI refinement is uncommitted; owner portrait preserved in `references/` and copied to production assets |
 | App runtime / screenshots | Safari desktop Hero, full-width progress, Download template, About portrait/signature, Behind cards, Contact semantics, and ICT clock inspected locally |
 | Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
@@ -55,7 +55,7 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 | F06 | 1 | Adaptive inverted/zooming cursor | Needs review | Motion/CSS transform conflict removed; one theme-aware layer and native-cursor readiness class implemented; touch/reduced-motion matrix pending |
 | F07 | 1 | About Me / portrait / editorial layout | Needs review | Owner portrait, B&W editorial crop, and animated `hienlnt` sign-off integrated; final biography/mobile crop review pending |
 | F08 | 1 | Featured Projects | Blocked | Honest editorial empty state implemented; verified projects/media/links required |
-| F09 | 1 → 2 | Skills fallback, then draggable tech carousel | Needs review | Repository-backed stack list plus bounded Motion bubbles implemented; touch/drag QA pending |
+| F09 | 1 → 2 | Skills fallback, then draggable tech carousel | Needs review | Software/engineering/DevOps/cloud grid, bounded Motion nodes, semantic mobile inventory, and honest AWS SAA `In progress` state implemented; touch/reduced-motion QA pending |
 | F10 | 2 | Dark curved kinetic marquee | Needs review | Native curved SVG textPath and reduced-motion fallback implemented; visual loop QA pending |
 | F11 | 2 | Behind the Curtains card layout | Needs review | Three-card dark layout and honest empty states implemented; responsive visual pass pending |
 | F12 | 2 | GitHub public activity integration | Blocked | Verified GitHub URL absent; no API request or fake activity added |
@@ -72,6 +72,8 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 
 | Date (ICT) | Task ID | Check | Result | Evidence / notes |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | F09 | `npm run lint` + `npx tsc --noEmit` + `npm run build` | Pass | ESLint and strict TypeScript completed; production build emitted static `/` and `/_not-found` routes |
+| 2026-10-30 | F09 | Safari desktop visual/semantic review | Partial pass | Grid canvas, grouped nodes, Code→Build→Deploy→AWS cue, SAA learning card, and matching semantic inventory rendered; mobile/touch/reduced-motion remain unverified |
 | 2026-10-30 | F05–F07, F13–F14 | `npm run lint` | Pass | ESLint completed after the identity refinement with no warnings/errors |
 | 2026-10-30 | F05–F07, F13–F14 | `npx tsc --noEmit` | Pass | Strict TypeScript completed after the content/interface changes |
 | 2026-10-30 | F05–F07, F13–F14 | `npm run build` | Pass | Next production build emitted static `/` and `/_not-found` routes |
@@ -79,12 +81,36 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 | 2026-10-30 | F01–F16 | `npx tsc --noEmit` | Pass | Strict TypeScript completed successfully |
 | 2026-10-30 | F01–F16 | `npm run build` | Pass | Next production build emitted static `/` and `/_not-found` routes |
 | 2026-10-30 | F05–F07, F13–F14 | Safari desktop visual/semantic review | Partial pass | Full-width progress, fixed download pill, portrait crop, readable signature, fallback cards, and pending contact icons inspected; mobile matrix not available in this pass |
+| 2026-10-30 | F04, F06–F07 | `npm run lint` + `npx tsc --noEmit` | Pass | SVG More chevron, soft portrait shadow, and robust dark-section cursor theme completed without lint/type errors |
+| 2026-10-30 | F04, F06–F07 | Chrome visual review | Not verified | Browser automation host timed out while opening the local page; reference images were inspected, but rendered desktop/mobile confirmation remains pending |
 | 2026-10-30 | F02–F06, F15 | Safari desktop visual/semantic review | Partial pass | Loader, Hero, nav, progress, spotlight, headings, and live ICT clock inspected; full mobile/deeper-section review pending |
 | 2026-10-30 | — | Initial code review / lint / typecheck / build / browser | Not run | Only documentation was prepared; live repo not inspected |
 
 When work begins, record actual commands and outputs (or concise paths to logs), affected browsers/screen sizes, and whether screenshots were compared to the relevant reference image.
 
 ## 5. Session handoff (keep newest at top)
+
+### 2026-10-30 — F09: Software to Cloud/DevOps skills playground
+
+- **Status:** Needs review
+- **Scope:** Add the approved grid transition and interactive Skills direction while representing AWS SAA only as learning in progress.
+- **Changed files:** `src/content/site.ts`, `src/components/sections/ProjectsSection.tsx`, `src/components/sections/SkillsSection.tsx`, `src/components/skills/DraggableSkillField.tsx`, `src/app/globals.css`, `PROGRESS.md`
+- **Implemented:** Added typed groups/status/positions/accents; grouped Software, Engineering, DevOps, AWS, and SAA learning data; built a grid canvas with bounded Motion nodes, temporary flow cues, reduced-motion handling, and a semantic responsive inventory; added the Projects→Skills grid transition.
+- **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop visually confirmed the grid, grouped node hierarchy, SAA `In progress` card, and matching accessibility content.
+- **Issues / deviations:** 320–900px, touch drag, fine-pointer drag physics, and reduced-motion visual behavior still require device/browser QA; no certification claim or exam date was added.
+- **Git checkpoint:** None; commit/push not requested.
+- **Next action:** Run the mobile/touch/reduced-motion viewport matrix and tune node positions only if observed clipping or gesture conflict appears.
+
+### 2026-10-30 — F04, F06–F07: header, portrait, and cursor polish
+
+- **Status:** Needs review
+- **Scope:** Fix the More indicator, soften the owner portrait treatment, and ensure the adaptive cursor contrasts on every dark section.
+- **Changed files:** `src/components/layout/FloatingGlassNav.tsx`, `src/components/motion/AdaptiveCursor.tsx`, `src/components/sections/KineticMarquee.tsx`, `src/app/globals.css`, `PROGRESS.md`
+- **Implemented:** Replaced the font-dependent down glyph with an animated SVG chevron; replaced the heavy hard portrait shadow with a restrained layered soft shadow; made cursor theme detection recognize both `data-theme` and `.section-dark`, and marked the marquee explicitly dark.
+- **Verification:** `npm run lint` and `npx tsc --noEmit` pass. Relevant navbar/About/cursor references inspected. Local Chrome visual verification was attempted but the automation host timed out before the local tab could be confirmed.
+- **Issues / deviations:** Rendered desktop/mobile and fine-pointer cursor confirmation remains pending; no approved design requirement changed.
+- **Git checkpoint:** None; commit/push not requested.
+- **Next action:** Visually review the three refinements in a local fine-pointer browser and complete mobile/reduced-motion QA.
 
 ### 2026-10-30 — F05–F07, F13–F14: identity and interaction refinement
 

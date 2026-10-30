@@ -82,7 +82,10 @@ export function FloatingGlassNav() {
                 onClick={() => setMenuOpen((open) => !open)}
               >
                 {isActive(item) && <motion.span className="active-pill" layoutId="nav-active" />}
-                <span>More</span><span aria-hidden="true" className="chevron">⌄</span>
+                <span>More</span>
+                <svg className="chevron" viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="m1.5 1.5 4.5 4 4.5-4" />
+                </svg>
               </button>
               <AnimatePresence>
                 {menuOpen && (

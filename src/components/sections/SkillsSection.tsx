@@ -8,9 +8,9 @@ export function SkillsSection() {
         <div className="dark-heading-row">
           <div>
             <p className="section-eyebrow">04 / Skills &amp; tech</p>
-            <h2>Tools in motion.</h2>
+            <h2>Engineering, from<br />code to cloud.</h2>
           </div>
-          <p>The verified stack behind this portfolio. A broader personal skill inventory is pending owner review.</p>
+          <p>I build software with the tools needed to develop, package, and deliver it—while growing practical cloud architecture knowledge.</p>
         </div>
         <DraggableSkillField skills={skills} />
       </div>

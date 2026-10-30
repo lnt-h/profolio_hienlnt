@@ -46,9 +46,12 @@ export type Project = {
 export type Skill = {
   id: string;
   name: string;
-  group: string;
+  group: "software" | "engineering" | "devops" | "cloud";
+  status: "used" | "learning";
   icon: string;
   context: string;
+  position: { x: number; y: number };
+  accent: "gold" | "cyan" | "violet" | "orange";
 };
 
 export type NavigationItem = {
@@ -108,14 +111,20 @@ export const projects: readonly Project[] = [
   },
 ];
 
-// These labels describe the technology used to build this portfolio itself.
-// Replace or extend only when the owner supplies a verified personal skill inventory.
+// Owner-confirmed software, delivery, and cloud inventory.
+// Learning items must remain visibly distinct from technologies already used.
 export const skills: readonly Skill[] = [
-  { id: "next", name: "Next.js", group: "Portfolio stack", icon: "N", context: "Application framework" },
-  { id: "react", name: "React", group: "Portfolio stack", icon: "R", context: "Interface composition" },
-  { id: "typescript", name: "TypeScript", group: "Portfolio stack", icon: "TS", context: "Strict typed source" },
-  { id: "tailwind", name: "Tailwind CSS", group: "Portfolio stack", icon: "TW", context: "Responsive styling" },
-  { id: "motion", name: "Motion", group: "Portfolio stack", icon: "M", context: "Accessible interaction" },
+  { id: "typescript", name: "TypeScript", group: "software", status: "used", icon: "TS", context: "Type-safe application development", position: { x: 9, y: 17 }, accent: "cyan" },
+  { id: "react", name: "React", group: "software", status: "used", icon: "R", context: "Component-driven interfaces", position: { x: 25, y: 47 }, accent: "cyan" },
+  { id: "next", name: "Next.js", group: "software", status: "used", icon: "N", context: "Full-stack web applications", position: { x: 31, y: 11 }, accent: "cyan" },
+  { id: "node", name: "Node.js", group: "software", status: "used", icon: "JS", context: "Server-side JavaScript runtime", position: { x: 12, y: 62 }, accent: "cyan" },
+  { id: "git", name: "Git", group: "engineering", status: "used", icon: "G", context: "Version control and collaboration", position: { x: 45, y: 36 }, accent: "violet" },
+  { id: "linux", name: "Linux", group: "engineering", status: "used", icon: "L", context: "Development and server environment", position: { x: 48, y: 67 }, accent: "violet" },
+  { id: "docker", name: "Docker", group: "devops", status: "used", icon: "D", context: "Containerized delivery", position: { x: 62, y: 13 }, accent: "orange" },
+  { id: "cicd", name: "CI/CD", group: "devops", status: "used", icon: "CI", context: "Automated build and delivery workflows", position: { x: 66, y: 54 }, accent: "orange" },
+  { id: "nginx", name: "Nginx", group: "devops", status: "used", icon: "NX", context: "Web serving and reverse proxy", position: { x: 78, y: 27 }, accent: "orange" },
+  { id: "aws", name: "AWS", group: "cloud", status: "used", icon: "AWS", context: "Cloud platform fundamentals", position: { x: 86, y: 58 }, accent: "gold" },
+  { id: "aws-saa", name: "AWS Solutions Architect Associate", group: "cloud", status: "learning", icon: "SAA", context: "Currently building practical AWS architecture knowledge.", position: { x: 75, y: 74 }, accent: "gold" },
 ];
 
 export const navigation: readonly NavigationItem[] = [

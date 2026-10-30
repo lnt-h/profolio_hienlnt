@@ -29,8 +29,9 @@ export function AdaptiveCursor() {
       const elementUnderCursor = document.elementFromPoint(event.clientX, event.clientY);
       const target = (elementUnderCursor as HTMLElement) || (event.target as HTMLElement);
       
-      const sectionTheme = target?.closest<HTMLElement>("[data-theme]")?.dataset.theme;
-      setTheme(sectionTheme === "dark" ? "dark" : "light");
+      const themedSection = target?.closest<HTMLElement>("[data-theme], .section-dark");
+      const isDarkSection = themedSection?.dataset.theme === "dark" || themedSection?.classList.contains("section-dark");
+      setTheme(isDarkSection ? "dark" : "light");
       
       if (target?.closest("[data-cursor='hero']")) setVariant("hero");
       else if (target?.closest("a, button, [data-cursor='interactive']")) setVariant("interactive");

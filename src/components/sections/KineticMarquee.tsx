@@ -1,6 +1,6 @@
 export function KineticMarquee() {
   return (
-    <section className="marquee-section section-dark" aria-label="Think, build, iterate">
+    <section className="marquee-section section-dark" data-theme="dark" aria-label="Think, build, iterate">
       <p className="sr-only">Think, build, iterate.</p>
       <svg className="curved-marquee" viewBox="0 0 1800 410" role="presentation" aria-hidden="true">
         <defs>

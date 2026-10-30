@@ -83,6 +83,7 @@ export function ProjectsSection() {
           </Reveal>
         )}
       </div>
+      <div className="projects-to-skills-grid" aria-hidden="true" />
     </section>
   );
 }
