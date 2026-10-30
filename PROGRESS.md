@@ -25,7 +25,7 @@ This is a **handoff and progress ledger**, not a replacement for the design spec
 | Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
 | Active task | **Needs review** — F04 source repository CTA and remaining mobile/reduced-motion review |
 | Last completed development task | **F04 open-source repository CTA refinement** |
-| Repo / Git status | Source CTA refinement implemented locally; no secrets or new dependencies added |
+| Repo / Git status | Source CTA refinement committed at `1ec5f6d`; no secrets or new dependencies added |
 | App runtime / screenshots | Safari desktop source CTA, Contact conversation, and semantic Skills inventory inspected locally; mobile viewport matrix remains pending |
 | Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
 | Design source | `plan.md`: 10 inspiration groups and approved layout/interaction contract |
@@ -105,7 +105,7 @@ When work begins, record actual commands and outputs (or concise paths to logs),
 - **Implemented:** Desktop now shows `View source` with GitHub/external-link cues; mobile shows `Source on GitHub`; config, types, component names, CSS classes, and accessible labels now consistently describe source viewing rather than downloading.
 - **Verification:** `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass. Safari desktop visually and semantically confirms the CTA and repository destination. Repository search finds no legacy download/template identifiers in `src/`.
 - **Issues / deviations:** Mobile menu behavior is code-reviewed but not visually resized in Safari; the broader mobile viewport matrix remains pending.
-- **Git checkpoint:** None; commit/push not requested for this slice.
+- **Git checkpoint:** `1ec5f6d` (`refactor: present portfolio as open source`).
 - **Next action:** Verify the mobile menu CTA at 320–390px during the next responsive review.
 
 ### 2026-10-31 — F06, F09, F13–F14: contact reply, Skills cleanup, and Spotify cursor boundary
