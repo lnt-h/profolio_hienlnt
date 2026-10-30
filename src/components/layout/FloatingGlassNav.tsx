@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { navigation } from "@/content/site";
+import { navigation, templateDownload } from "@/content/site";
 
 const watchedSections = ["home", "about", "projects", "skills", "more", "contact"];
 
@@ -133,6 +133,9 @@ export function FloatingGlassNav() {
             {navigation.map((item) => (
               <a key={item.label} href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
             ))}
+            <a className="mobile-template-link" href={templateDownload.href} onClick={() => setMenuOpen(false)}>
+              Download template <span aria-hidden="true">↓</span>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

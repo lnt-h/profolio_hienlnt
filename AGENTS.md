@@ -34,7 +34,7 @@ These are **required outcomes** from `plan.md`; implementation choices may diffe
 ### Global components (not extra sections)
 
 - **Floating Glass Navbar**: centered near the top; compact capsule, dark translucent frosted-glass surface, contrast-safe on light/dark backgrounds, sliding active pill, `More` menu, Contact CTA; real scrollspy and mobile layout. **Do not replace with a full-width conventional header.**
-- **Mini Scroll Progress**: centered at viewport top, **120–160px wide × 2px high**; tracks page scroll, not full-screen loading progress. **Never make it full-width.**
+- **Scroll Progress**: fixed across the viewport top, **full-width × 3px high**; tracks page scroll with a restrained gold fill and remains visually separate from the preloader and floating navbar.
 - **Adaptive Cursor**: fine-pointer desktop only, one cursor layer that contrasts/inverts over light and dark surfaces, enlarges over interactive targets, and transitions to the gold Hero spotlight over Hero text. Preserve native/focus behavior and hide for touch/reduced motion. **Do not render two competing cursors.**
 - **Transitions**: tasteful scroll reveals, hover transitions, and section-theme changes; readable and usable without animation.
 - **Optional 3D orb**: the Achint blue fluid sphere is an **optional later enhancement**, not part of the required Contact section. Do not add Three.js or WebGL to the baseline for it.
@@ -122,7 +122,7 @@ If an animation is technically expensive, simplify its *mechanism*, not the appr
 ### Phase boundaries
 
 - **Phase 0:** Confirm personal content, visual token direction, key screenshots/requirements. Missing personal info may be kept out of the UI until confirmed.
-- **Phase 1:** Fully usable, responsive core portfolio, floating nav, mini progress, loader, Hero/spotlight, About, Projects, static Skills fallback, minimal Contact, Footer, accessible custom cursor.
+- **Phase 1:** Fully usable, responsive core portfolio, floating nav, full-width top progress, loader, Hero/spotlight, About, Projects, static Skills fallback, minimal Contact, Footer, accessible custom cursor.
 - **Phase 2:** Draggable skills, curved marquee, Behind the Curtains 3-card experience; real GitHub plus Guestbook/Spotify **only if approved and credentials/data exist**.
 - **Phase 3:** Optional 3D orb, deeper case studies, performance hardening, production readiness, and deployment **if explicitly requested**.
 
@@ -153,7 +153,7 @@ Use the existing package manager (`pnpm`, `yarn`, `bun`, or `npm`) rather than b
 
 Flag these as high-priority violations and suggest a safe alternative:
 
-1. **Design drift**: replacing the compact centered navbar, mini progress, curved marquee, draggable tech bubbles, dark personality cards, or two-bubble Contact with generic layouts. **Safe path:** implement the approved component contract from `plan.md` and provide responsive fallbacks.
+1. **Design drift**: replacing the compact centered navbar, full-width 3px progress, curved marquee, draggable tech bubbles, dark personality cards, or two-bubble Contact with generic layouts. **Safe path:** implement the approved component contract from `plan.md` and provide responsive fallbacks.
 2. **Misleading content**: invented experiences, fake commits/tracks/messages, placeholder links shown as real. **Safe path:** use verified data or explicit unavailable/empty states.
 3. **Broken a11y**: cursor hijacking focus, inaccessible drag-only interaction, unskippable loader, forced motion, hidden body content without JS. **Safe path:** semantic controls and reduced-motion/no-JS fallbacks.
 4. **Security and privacy**: provider keys in client code, unsafe guestbook HTML, missing abuse protections, accidental secret commits. **Safe path:** server-only secrets, validation, moderation, caching.

@@ -2,8 +2,10 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
+import { HienlntSignature } from "@/components/motion/HienlntSignature";
 
 type LoaderState = "running" | "done" | "skipped";
+const INTRO_SESSION_KEY = "hienlnt-signature-intro-v2";
 
 export function Preloader() {
   const reduceMotion = useReducedMotion();
@@ -14,7 +16,7 @@ export function Preloader() {
     const shouldBypass =
       reduceMotion ||
       window.location.hash.length > 0 ||
-      window.sessionStorage.getItem("hienlnt-intro-seen") === "true";
+      window.sessionStorage.getItem(INTRO_SESSION_KEY) === "true";
 
     if (shouldBypass) {
       const bypassFrame = requestAnimationFrame(() => setState("done"));
@@ -25,13 +27,13 @@ export function Preloader() {
     let frame = 0;
     const tick = (now: number) => {
       const elapsed = now - startedAt;
-      const ratio = Math.min(elapsed / 1200, 1);
+      const ratio = Math.min(elapsed / 1550, 1);
       const eased = 1 - Math.pow(1 - ratio, 3);
       setProgress(Math.round(eased * 100));
       if (ratio < 1) {
         frame = requestAnimationFrame(tick);
       } else {
-        window.sessionStorage.setItem("hienlnt-intro-seen", "true");
+        window.sessionStorage.setItem(INTRO_SESSION_KEY, "true");
         window.setTimeout(() => setState("done"), 100);
       }
     };
@@ -40,7 +42,7 @@ export function Preloader() {
   }, [reduceMotion]);
 
   const skip = () => {
-    window.sessionStorage.setItem("hienlnt-intro-seen", "true");
+    window.sessionStorage.setItem(INTRO_SESSION_KEY, "true");
     setProgress(100);
     setState("skipped");
   };
@@ -58,9 +60,12 @@ export function Preloader() {
           aria-label="Portfolio introduction"
         >
           <div className="preloader-center" aria-hidden="true">
-            <div className="preloader-number"><span>{progress}</span><sup>%</sup></div>
+            <HienlntSignature progress={progress} />
+            <div className="preloader-meta">
+              <p>Drawing the signature</p>
+              <div className="preloader-number"><span>{progress}</span><sup>%</sup></div>
+            </div>
             <div className="preloader-track"><span style={{ transform: `scaleX(${progress / 100})` }} /></div>
-            <p>Crafting your experience</p>
           </div>
           <button type="button" onClick={skip}>Skip intro</button>
         </motion.div>

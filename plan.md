@@ -31,7 +31,7 @@ Xây một **personal portfolio Software Engineer độc lập**, ưu tiên ch�
 | **I03** | **Achint Verma Portfolio** | https://achint.vercel.app/ | Kinetic curved marquee; các vòng tròn tech có `POKE · DRAG · FLICK`; 3D fluid blue orb | Skills + Marquee; orb tùy chọn | **[CHỐT]** carousel/marquee; **[TÙY CHỌN]** orb |
 | **I04** | **Apple-like Floating Glass Navbar** | Ảnh người dùng gửi; không có URL công khai | Header capsule nằm **chính giữa phía trên**, glass blur, sliding active pill, CTA tròn sáng | Global navigation | **[CHỐT]** |
 | **I05** | **Behind the Curtains** | Ảnh người dùng gửi; không có URL công khai | Heading sans + italic serif; 3 card GitHub, Guestbook, Spotify trên nền tối | Personality section | **[CHỐT]** bố cục; dữ liệu phải thật |
-| **I06** | **Mini Scroll Progress** | Ảnh người dùng gửi; không có URL công khai | Một vạch tiến trình rất **ngắn và mảnh**, đặt giữa sát mép trên | Global scroll indicator | **[CHỐT]** |
+| **I06** | **Scroll Progress** | Ảnh người dùng gửi; không có URL công khai | Cảm hứng từ vạch tiến trình mảnh; owner đã chốt phiên bản **full-width × 3px** sát mép trên | Global scroll indicator | **[CHỐT — cập nhật]** |
 | **I07** | **Junaid Jamel** | https://www.junaidjamel.com/#process | About 2 cột, portrait B&W, khung + hard shadow, heading gray/black, geometric sans | About + font direction | **[CHỐT]** phong cách |
 | **I08** | **Thinh Le Portfolio** | https://thinh.io.vn/portfolio | Custom cursor hình tròn **đảo màu nền**, phóng to/zoom khi hover | Global cursor + Hero spotlight | **[CHỐT]** |
 | **I09** | **Sayeed Joy** | https://sayeedjoy.com/ | Contact hai bubble tin nhắn, link Email/LinkedIn/GitHub, footer ngày/giờ tối giản | Contact + Footer | **[CHỐT]** |
@@ -130,7 +130,7 @@ Lưu ý: `#777777` có thể không đạt contrast ở mọi kích thước/opa
 | **07** | **Minimal Contact** `#contact` | Trở về sáng, blue bubble | Liên hệ rất nhanh | I09 |
 | **08** | **Tiny Footer** | Sáng tối giản | Năm, ngày, giờ VN, credit | I09 |
 
-**Global UI (không tính thành section):** floating centered glass navbar (I04), mini top scroll progress (I06), inverted zoom cursor (I08), scroll reveal, responsive state và reduced-motion fallbacks.
+**Global UI (không tính thành section):** floating centered glass navbar (I04), full-width 3px top scroll progress (owner-approved replacement for the mini bar), inverted zoom cursor (I08), scroll reveal, responsive state và reduced-motion fallbacks.
 
 **Không thêm bắt buộc** section Experience timeline, Process ba bước, Services, Blog hoặc Statistics như file cũ. Chúng không nằm trong 9 phần đã chốt. Có thể cân nhắc trong phiên bản sau nếu có dữ liệu thật và không làm loãng câu chuyện.
 
@@ -326,7 +326,7 @@ Nếu làm: dùng React Three Fiber/Three.js với shader nhẹ, pointer uniform
 
 **Reference:** screenshot `references/07-mini-scroll-progress.png`.
 
-- **Thanh nằm giữa, sát mép trên viewport**, width **120–160px**, height **2px**. Không phải progress chạy toàn chiều rộng màn hình.
+- **Thanh chạy toàn chiều rộng, sát mép trên viewport**, height **3px**. Đây là quyết định owner mới nhất, thay thế kích thước mini 120–160px trước đó.
 - Track xám/trong suốt rất nhẹ, fill kem/trắng trên nền tối hoặc near-black trên nền sáng; tự tính tương phản nếu overlay xuyên nền.
 - Tính tiến trình `scrollY / (documentHeight - viewportHeight)` và clamp 0–100; tăng khi kéo xuống, giảm khi kéo lên.
 - Dùng `useScroll`/`useSpring` hoặc JS scroll passive; animation transform/scaleX, không đổi width mỗi frame nếu gây layout.
@@ -379,7 +379,7 @@ Nếu làm: dùng React Three Fiber/Three.js với shader nhẹ, pointer uniform
 | Hero gold spotlight | pointer hover H1 | grow + masked/invert text, spring mềm | Nền/text luôn còn đọc được |
 | Floating navbar active | click/scrollspy | `layoutId` / animated pill ~200–350ms | Instant switch giảm chuyển động |
 | Navbar glass | scroll/context | subtle blur/border response | Contrast đủ cả dark/light |
-| Mini progress | window scroll | `scaleX(scrollYProgress)` + spring nhẹ | Kích thước track không đổi 120–160px |
+| Top progress | window scroll | `scaleX(scrollYProgress)` + spring nhẹ | Track full-width, cao 3px |
 | About reveal | entering viewport | translateY 12–24px + opacity | Text, portrait hiện nếu JS lỗi |
 | Project hover | hover/focus | image scale 1→1.03, arrow micro-motion | Focus keyboard xem được hành động |
 | Skill poke | hover/tap | scale/glow ~150–250ms | Không hover vẫn thấy tên tech |
@@ -435,7 +435,7 @@ src/
       SiteHeader.tsx
       FloatingGlassNav.tsx
       MobileNav.tsx
-      MiniScrollProgress.tsx
+      MiniScrollProgress.tsx # retained filename; renders the approved full-width 3px progress
       SiteFooter.tsx
       VietnamClock.tsx
     motion/
@@ -486,7 +486,7 @@ public/
   resume.pdf                            # only when CV supplied
 ```
 
-**Server / Client boundary:** Page/section text và project data render server/static càng nhiều càng tốt. Chỉ cursor, nav active/scrollspy, mini progress, drag physics, preloader, live clock và client interactions cần `use client`. Lazy-load expensive widgets. Không đặt `use client` lên cả `app/page.tsx` chỉ vì vài animation.
+**Server / Client boundary:** Page/section text và project data render server/static càng nhiều càng tốt. Chỉ cursor, nav active/scrollspy, scroll progress, drag physics, preloader, live clock và client interactions cần `use client`. Lazy-load expensive widgets. Không đặt `use client` lên cả `app/page.tsx` chỉ vì vài animation.
 
 ### 7.3. Data model / config (gợi ý, không phải code phải viết ngay)
 
@@ -645,7 +645,7 @@ public/
 - [ ] Giữ palette warm cream + ink + dark interactive zone + gold Hero + blue Contact nhất quán.
 - [ ] Floating navbar **ở giữa phía trên**; có đúng active pill, More dropdown và Contact CTA.
 - [ ] Scrollspy chính xác khi scroll bằng chuột/touch/click anchor; active Home/About/Projects/More/Contact phù hợp.
-- [ ] Mini scroll progress **120–160px × 2px**, nằm top-center; không kéo ngang màn hình.
+- [ ] Scroll progress **full-width × 3px**, nằm sát mép trên và không chồng navbar.
 - [ ] Navbar/scroll progress không chồng lên nhau; contrast tốt cả light/dark.
 
 ### Intro / cursor / Hero
@@ -706,7 +706,7 @@ public/
 3. **[I03 — Achint Verma Portfolio](https://achint.vercel.app/)** — skill bubble interactions, curved kinetic marquee, optional blue fluid orb. Ảnh: [03-achint-marquee.png](references/03-achint-marquee.png), [04-achint-orb.png](references/04-achint-orb.png).
 4. **[I04 — Floating glass navbar screenshot](references/05-glass-navbar.png)** — không có URL công khai. Centered floating pill, translucent dark glass, active sliding pill.
 5. **[I05 — Behind the Curtains screenshot](references/06-behind-the-curtains.png)** — không có URL công khai. GitHub + Guestbook + Spotify three-card dark dashboard.
-6. **[I06 — Mini scroll progress screenshot](references/07-mini-scroll-progress.png)** — không có URL công khai. Fixed centered 120–160px / 2px line.
+6. **[I06 — Scroll progress screenshot](references/07-mini-scroll-progress.png)** — không có URL công khai. Giữ tinh thần mảnh/tối giản; owner đã thay kích thước bằng full-width / 3px.
 7. **[I07 — Junaid Jamel](https://www.junaidjamel.com/#process)** — About portrait two-column, heading, typography inspiration. Ảnh: [08-junaid-about.png](references/08-junaid-about.png). (Anchor là URL được người dùng gửi; ảnh họ chọn là khu vực About.)
 8. **[I08 — Thinh Le](https://thinh.io.vn/portfolio)** — inverted zoom cursor. Ảnh: [09-inverted-cursor.png](references/09-inverted-cursor.png).
 9. **[I09 — Sayeed Joy](https://sayeedjoy.com/)** — contact chat bubbles and live footer. Ảnh: [10-sayeed-contact.png](references/10-sayeed-contact.png).
@@ -745,6 +745,6 @@ public/
 
 ## 15. Handoff instruction cho Codex (sử dụng trong Plan Mode)
 
-> **Project:** `hienlnt.id.vn` — independent Software Engineer portfolio. Treat this `plan.md` and the 11 referenced screenshots as the source of truth for agreed design. Work in **Plan Mode first**, do not code until implementation is explicitly approved. Use Next.js App Router + React + TypeScript + Tailwind CSS + Motion. Implement the 00→08 page order, floating centered Apple-like glass navbar, short top-centered progress line, adaptive inverted/zooming cursor, gold hero spotlight, draggable tech bubbles, curved kinetic marquee, Behind the Curtains 3 cards, minimal chat-bubble contact, Vietnam local-time footer. Do not substitute generic Skills grid for the interactive carousel or a full-width progress bar for the mini bar. Do not replace chat-bubble Contact with a dark form or a 3D orb. Do not invent work experience, projects or social URLs. Honor reduced motion, keyboard, mobile, performance and data/security fallback. Follow Phase 0→3 gates and check the acceptance list before claiming completion.
+> **Project:** `hienlnt.id.vn` — independent Software Engineer portfolio. Treat this `plan.md` and the 11 referenced screenshots as the source of truth for agreed design. Work in **Plan Mode first**, do not code until implementation is explicitly approved. Use Next.js App Router + React + TypeScript + Tailwind CSS + Motion. Implement the 00→08 page order, floating centered Apple-like glass navbar, full-width 3px top progress line, adaptive inverted/zooming cursor, gold hero spotlight, draggable tech bubbles, curved kinetic marquee, Behind the Curtains 3 cards, minimal chat-bubble contact, Vietnam local-time footer. Do not substitute generic Skills grid for the interactive carousel. Do not replace chat-bubble Contact with a dark form or a 3D orb. Do not invent work experience, projects or social URLs. Honor reduced motion, keyboard, mobile, performance and data/security fallback. Follow Phase 0→3 gates and check the acceptance list before claiming completion.
 
 **Kết thúc plan:** tài liệu thiết kế và kỹ thuật đã hoàn chỉnh theo thông tin trong cuộc trò chuyện; chưa tạo source code hoặc triển khai hosting.

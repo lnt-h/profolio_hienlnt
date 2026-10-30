@@ -2,7 +2,7 @@
 
 > Project: **hienlnt.id.vn** — independent personal Software Engineer portfolio  
 > Last reviewed: **2026-10-30**  
-> Status: **Core local portfolio implemented; real content and full responsive review pending**  
+> Status: **Core local portfolio implemented; portrait and identity refinements added; verified links/projects and full responsive review pending**
 > Source of requirements: [`plan.md`](./plan.md) · Codex rules: [`AGENTS.md`](./AGENTS.md) · Visual references: [`references/`](./references/)
 
 ## 1. How to use this file
@@ -23,19 +23,20 @@ This is a **handoff and progress ledger**, not a replacement for the design spec
 | Field | Value |
 | --- | --- |
 | Current phase | **Phase 1–2 local implementation; content-dependent work pending** |
-| Active task | **Needs review** — replace honest fallbacks with owner-verified content |
-| Last completed development task | **F01 foundation and F15 Vietnam clock** |
-| Repo / Git status | Inspected; local user documentation/reference changes preserved; application changes uncommitted |
-| App runtime / screenshots | Safari desktop Hero, preloader, glass nav, spotlight, semantics, and ICT clock inspected locally |
+| Active task | **Needs review** — responsive review of the portrait/signature/cursor refinement and owner-verified links |
+| Last completed development task | **F05 full-width progress and identity refinement slice** |
+| Repo / Git status | Inspected; requested UI refinement is uncommitted; owner portrait preserved in `references/` and copied to production assets |
+| App runtime / screenshots | Safari desktop Hero, full-width progress, Download template, About portrait/signature, Behind cards, Contact semantics, and ICT clock inspected locally |
 | Tests / build | `npm run lint`, `npx tsc --noEmit`, and `npm run build` pass |
 | Design source | `plan.md`: 10 inspiration groups and approved layout/interaction contract |
-| Next recommended action | Supply verified portrait, projects/media, skills, email, GitHub, and LinkedIn; then complete content and mobile/browser QA |
+| Next recommended action | Supply verified projects, email, GitHub, and LinkedIn; then complete mobile/browser/reduced-motion QA |
 
 ### Known inputs / open dependencies
 
 - [x] `plan.md` and `AGENTS.md` have been prepared as documents.
 - [x] Confirm that `plan.md`, `AGENTS.md`, `PROGRESS.md`, and unpacked `references/` are present in the actual Codex repository.
-- [ ] Confirm final profile text, real project list, work links, portrait, contact details, and CV before publishing. Do not invent missing facts.
+- [ ] Confirm final profile text, real project list, work links, contact details, and CV before publishing. Do not invent missing facts.
+- [x] Owner-supplied portrait added to `references/` and integrated as the production About image.
 - [ ] Verify domain registration, hosting, and deployment only when those tasks are authorized; the chosen domain is **not proof of ownership or publication**.
 - [x] Check repository contents and installed toolchain before choosing package manager or commands.
 
@@ -50,16 +51,16 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 | F02 | 1 | Preloader 0–100% and page reveal | Needs review | Intro and session/hash/reduced-motion bypass implemented; Safari lifecycle fix applied; full timing pass pending |
 | F03 | 1 | Hero, oversized typography, gold spotlight | Needs review | Desktop Safari visual checked against references; mobile visual review pending |
 | F04 | 1 | Floating centered Apple-like glass navbar | Needs review | Desktop capsule/dropdown/active pill visible; complete keyboard/mobile scrollspy review pending |
-| F05 | 1 | Mini scroll progress, 120–160px × 2px | Needs review | Correct 148×2px visual present; full scroll behavior not manually recorded |
-| F06 | 1 | Adaptive inverted/zooming cursor | Needs review | Single spotlight cursor visible in Safari; touch/reduced-motion matrix pending |
-| F07 | 1 | About Me / portrait / editorial layout | Blocked | Editorial layout and monogram fallback implemented; real portrait/final bio required |
+| F05 | 1 | Full-width top scroll progress, 3px | Needs review | Owner-approved contract update implemented; Safari desktop verified at top/mid/near-end positions; mobile browser review pending |
+| F06 | 1 | Adaptive inverted/zooming cursor | Needs review | Motion/CSS transform conflict removed; one theme-aware layer and native-cursor readiness class implemented; touch/reduced-motion matrix pending |
+| F07 | 1 | About Me / portrait / editorial layout | Needs review | Owner portrait, B&W editorial crop, and animated `hienlnt` sign-off integrated; final biography/mobile crop review pending |
 | F08 | 1 | Featured Projects | Blocked | Honest editorial empty state implemented; verified projects/media/links required |
 | F09 | 1 → 2 | Skills fallback, then draggable tech carousel | Needs review | Repository-backed stack list plus bounded Motion bubbles implemented; touch/drag QA pending |
 | F10 | 2 | Dark curved kinetic marquee | Needs review | Native curved SVG textPath and reduced-motion fallback implemented; visual loop QA pending |
 | F11 | 2 | Behind the Curtains card layout | Needs review | Three-card dark layout and honest empty states implemented; responsive visual pass pending |
 | F12 | 2 | GitHub public activity integration | Blocked | Verified GitHub URL absent; no API request or fake activity added |
-| F13 | 2 | Guestbook and Spotify connections | Needs review | Approved fallback-first unavailable states implemented; no services/credentials provisioned |
-| F14 | 1 | Minimal two-chat-bubble Contact | Blocked | Two-bubble layout implemented; verified email/social actions required |
+| F13 | 2 | Guestbook and Spotify connections | Needs review | Original static `hienlnt` signature mark added to Guestbook; Spotify remains honestly unconnected with no playback |
+| F14 | 1 | Minimal two-chat-bubble Contact | Blocked | Bubbles reduced and Email/GitHub/LinkedIn pending icons added without fake hrefs; verified links still required |
 | F15 | 1 | Footer with Vietnam date/live time/year | Done | Safari showed correct ICT date/time; static build has no hydration/current-time error |
 | F16 | 1 → 3 | Responsive, SEO, accessibility, performance | Needs review | Semantics, focus, reduced-motion CSS, metadata, breakpoints implemented; full audit pending |
 | F17 | 3 | Optional blue fluid 3D orb | Not started | **Optional only**, no baseline dependency |
@@ -71,15 +72,30 @@ Each row names a *deliverable*, not evidence of existing code. Initial statuses 
 
 | Date (ICT) | Task ID | Check | Result | Evidence / notes |
 | --- | --- | --- | --- | --- |
+| 2026-10-30 | F05–F07, F13–F14 | `npm run lint` | Pass | ESLint completed after the identity refinement with no warnings/errors |
+| 2026-10-30 | F05–F07, F13–F14 | `npx tsc --noEmit` | Pass | Strict TypeScript completed after the content/interface changes |
+| 2026-10-30 | F05–F07, F13–F14 | `npm run build` | Pass | Next production build emitted static `/` and `/_not-found` routes |
 | 2026-10-30 | F01–F16 | `npm run lint` | Pass | ESLint completed with no warnings/errors |
 | 2026-10-30 | F01–F16 | `npx tsc --noEmit` | Pass | Strict TypeScript completed successfully |
 | 2026-10-30 | F01–F16 | `npm run build` | Pass | Next production build emitted static `/` and `/_not-found` routes |
+| 2026-10-30 | F05–F07, F13–F14 | Safari desktop visual/semantic review | Partial pass | Full-width progress, fixed download pill, portrait crop, readable signature, fallback cards, and pending contact icons inspected; mobile matrix not available in this pass |
 | 2026-10-30 | F02–F06, F15 | Safari desktop visual/semantic review | Partial pass | Loader, Hero, nav, progress, spotlight, headings, and live ICT clock inspected; full mobile/deeper-section review pending |
 | 2026-10-30 | — | Initial code review / lint / typecheck / build / browser | Not run | Only documentation was prepared; live repo not inspected |
 
 When work begins, record actual commands and outputs (or concise paths to logs), affected browsers/screen sizes, and whether screenshots were compared to the relevant reference image.
 
 ## 5. Session handoff (keep newest at top)
+
+### 2026-10-30 — F05–F07, F13–F14: identity and interaction refinement
+
+- **Status:** Needs review
+- **Scope:** Full-width progress override, cursor alignment, owner portrait, original `hienlnt` signature, template download, compact Contact, honest integration fallbacks
+- **Changed files:** `AGENTS.md`, `plan.md`, `PROGRESS.md`, `public/images/hien-portrait.jpg`, and focused files under `src/`
+- **Implemented:** 3px full-width scroll progress, desktop/mobile template action, one readiness-gated section-aware cursor, real B&W portrait, animated About signature/static Guestbook mark, smaller contact bubbles, pending social icons, and unchanged Spotify unavailable state.
+- **Verification:** `npm run lint`, `npx tsc --noEmit`, and production build pass. Safari desktop visually inspected at top/mid/near-end scroll positions; semantic tree confirms one H1, portrait alt, signature decoration, pending channels, and no Spotify playback control.
+- **Issues / deviations:** Mobile viewport, coarse pointer, reduced motion, and Firefox/Chrome visual checks remain unverified; official social/contact URLs and project content remain absent.
+- **Git checkpoint:** None; commit/push not requested for this slice.
+- **Next action:** Add verified social URLs or run the remaining mobile/reduced-motion browser matrix.
 
 ### 2026-10-30 — F01–F16: local portfolio vertical slice
 

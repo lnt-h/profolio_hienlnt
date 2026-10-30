@@ -1,4 +1,5 @@
 import { profile } from "@/content/site";
+import { SocialIcon } from "@/components/ui/SocialIcon";
 
 export function ContactSection() {
   return (
@@ -8,13 +9,20 @@ export function ContactSection() {
         <div className="chat outgoing">how do i actually reach you?</div>
         <div className="chat incoming">
           <p>Verified contact links are being prepared.</p>
-          {profile.socialLinks.length > 0 ? (
-            <div className="contact-actions">
-              {profile.socialLinks.map((link) => <a href={link.href} key={link.label}>{link.label}</a>)}
-            </div>
-          ) : (
-            <span className="contact-pending">No guessed addresses. No dead links.</span>
-          )}
+          <div className="contact-actions" aria-label="Contact channels">
+            {profile.contactChannels.map((channel) => channel.status === "available" && channel.href ? (
+              <a href={channel.href} key={channel.label} aria-label={channel.label}>
+                <SocialIcon label={channel.label} />
+                <span>{channel.label}</span>
+              </a>
+            ) : (
+              <span className="contact-action is-pending" key={channel.label} aria-label={`${channel.label} link coming soon`} aria-disabled="true">
+                <SocialIcon label={channel.label} />
+                <span>{channel.label}</span>
+              </span>
+            ))}
+          </div>
+          <span className="contact-pending">Official links coming soon.</span>
         </div>
       </div>
     </section>

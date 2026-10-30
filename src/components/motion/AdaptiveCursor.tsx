@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useState } from "react";
 
 type CursorVariant = "default" | "interactive" | "hero" | "hidden";
+type CursorTheme = "light" | "dark";
 
 export function AdaptiveCursor() {
   const rawX = useMotionValue(-100);
@@ -11,6 +12,7 @@ export function AdaptiveCursor() {
   const x = useSpring(rawX, { stiffness: 850, damping: 48, mass: 0.18 });
   const y = useSpring(rawY, { stiffness: 850, damping: 48, mass: 0.18 });
   const [variant, setVariant] = useState<CursorVariant>("hidden");
+  const [theme, setTheme] = useState<CursorTheme>("light");
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
@@ -23,6 +25,8 @@ export function AdaptiveCursor() {
       rawX.set(event.clientX);
       rawY.set(event.clientY);
       const target = event.target as HTMLElement;
+      const sectionTheme = target.closest<HTMLElement>("[data-theme]")?.dataset.theme;
+      setTheme(sectionTheme === "dark" ? "dark" : "light");
       if (target.closest("[data-cursor='hero']")) setVariant("hero");
       else if (target.closest("a, button, [data-cursor='interactive']")) setVariant("interactive");
       else setVariant("default");
@@ -41,11 +45,17 @@ export function AdaptiveCursor() {
     };
   }, [rawX, rawY]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.toggle("custom-cursor-ready", enabled);
+    return () => root.classList.remove("custom-cursor-ready");
+  }, [enabled]);
+
   if (!enabled) return null;
 
   return (
     <motion.div
-      className={`adaptive-cursor cursor-${variant}`}
+      className={`adaptive-cursor cursor-${variant} cursor-theme-${theme}`}
       style={{ x, y }}
       animate={{
         width: variant === "hero" ? 176 : variant === "interactive" ? 54 : 20,

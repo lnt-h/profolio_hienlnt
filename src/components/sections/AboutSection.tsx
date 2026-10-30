@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { HienlntSignature } from "@/components/motion/HienlntSignature";
 import { profile } from "@/content/site";
 
 export function AboutSection() {
@@ -10,9 +12,17 @@ export function AboutSection() {
         </header>
         <div className="about-grid">
           <div>
-            <div className="portrait-frame" role="img" aria-label="Portrait placeholder for Hien Le; final portrait pending">
-              <div className="portrait-monogram" aria-hidden="true">HL</div>
-              <span className="portrait-label">Portrait pending</span>
+            <div className="portrait-frame">
+              <Image
+                className="portrait-image"
+                src={profile.portrait.src}
+                alt={profile.portrait.alt}
+                fill
+                sizes="(max-width: 900px) calc(100vw - 36px), 38vw"
+                priority={false}
+                style={{ "--portrait-position": profile.portrait.objectPosition, "--portrait-position-mobile": profile.portrait.mobileObjectPosition } as React.CSSProperties}
+              />
+              <span className="portrait-label">Hien Le</span>
             </div>
             <div className="portrait-meta">
               <strong>{profile.displayName}</strong>
@@ -23,7 +33,10 @@ export function AboutSection() {
             <p className="about-lead">Building useful software means understanding the problem before reaching for the tools.</p>
             <p>{profile.shortBio}</p>
             <blockquote>{profile.principle}</blockquote>
-            <p>The final biography and portrait will be added only after the owner verifies them.</p>
+            <div className="about-signoff">
+              <span>Built with intent,</span>
+              <HienlntSignature />
+            </div>
           </div>
         </div>
       </div>

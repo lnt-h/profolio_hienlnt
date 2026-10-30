@@ -1,7 +1,20 @@
 export type Availability = "available" | "unavailable" | "empty" | "error";
 
-export type SocialLink = {
+export type ContactChannel = {
   label: "Email" | "GitHub" | "LinkedIn";
+  href?: string;
+  status: "available" | "pending";
+};
+
+export type Portrait = {
+  src: string;
+  alt: string;
+  objectPosition: string;
+  mobileObjectPosition: string;
+};
+
+export type TemplateDownload = {
+  label: string;
   href: string;
 };
 
@@ -13,7 +26,8 @@ export type Profile = {
   statement: readonly [string, string, string];
   shortBio: string;
   principle: string;
-  socialLinks: readonly SocialLink[];
+  portrait: Portrait;
+  contactChannels: readonly ContactChannel[];
 };
 
 export type Project = {
@@ -55,7 +69,22 @@ export const profile: Profile = {
   shortBio:
     "I care about building software that solves real problems, with thoughtful engineering and a clear product purpose.",
   principle: "Useful software starts with clear decisions.",
-  socialLinks: [],
+  portrait: {
+    src: "/images/hien-portrait.jpg",
+    alt: "Portrait of Hien Le",
+    objectPosition: "78% 50%",
+    mobileObjectPosition: "82% 50%",
+  },
+  contactChannels: [
+    { label: "Email", href: "mailto:lengoctanhien090@gmail.com", status: "available" },
+    { label: "GitHub", href: "https://github.com/lnt-h", status: "available" },
+    { label: "LinkedIn", status: "pending" },
+  ],
+};
+
+export const templateDownload: TemplateDownload = {
+  label: "Download template",
+  href: "https://github.com/lnt-h/profolio_hienlnt/archive/refs/heads/main.zip",
 };
 
 export const projects: readonly Project[] = [];

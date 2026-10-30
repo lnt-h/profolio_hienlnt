@@ -7,7 +7,7 @@ export function MiniScrollProgress() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 180, damping: 28, mass: 0.35 });
 
   return (
-    <div className="mini-progress" aria-hidden="true">
+    <div className="scroll-progress" aria-hidden="true">
       <motion.span style={{ scaleX }} />
     </div>
   );

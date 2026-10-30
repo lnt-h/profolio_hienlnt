@@ -1,4 +1,5 @@
 import { githubState } from "@/content/site";
+import { HienlntSignature } from "@/components/motion/HienlntSignature";
 
 export function BehindSection() {
   return (
@@ -21,6 +22,7 @@ export function BehindSection() {
             <div>
               <h3>Leave your <em>signature</em></h3>
               <p>The guestbook will open only with moderation and anti-spam safeguards in place.</p>
+              <HienlntSignature compact />
             </div>
             <button type="button" disabled>Coming later <span aria-hidden="true">→</span></button>
           </article>
