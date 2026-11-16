@@ -192,6 +192,19 @@ button { font: inherit; }
 .about-copy blockquote { border-left: 3px solid var(--gold); padding-left: 22px; font-weight: 800; }
 .about-signoff { display: grid; gap: 4px; width: min(100%, 470px); margin-top: 8px; color: #8b6500; }
 .about-signoff > span { color: var(--muted); font: 600 0.7rem/1 var(--font-geist-mono), monospace; letter-spacing: 0.14em; text-transform: uppercase; }
+.credentials { margin-top: 96px; border-top: 1px solid rgb(17 17 17 / 0.14); padding-top: 28px; }
+.credentials-heading { margin: 0 0 8px; color: var(--muted); font: 600 0.7rem/1 var(--font-geist-mono), monospace; letter-spacing: 0.14em; text-transform: uppercase; }
+.credentials-list { list-style: none; margin: 0; padding: 0; }
+.credential { display: grid; grid-template-columns: 130px 1fr auto; gap: 24px; align-items: start; border-bottom: 1px solid rgb(17 17 17 / 0.1); padding: 22px 0; }
+.credential-period { color: var(--muted); font: 600 0.74rem/1.6 var(--font-geist-mono), monospace; letter-spacing: 0.06em; }
+.credential-body { display: grid; gap: 4px; }
+.credential-body strong { font-size: clamp(1.05rem, 1.5vw, 1.3rem); letter-spacing: -0.01em; }
+.credential-body p { margin: 4px 0 0; max-width: 620px; color: var(--muted); font-size: 0.98rem; line-height: 1.6; }
+.credential-issuer { color: var(--muted); font-size: 0.95rem; }
+.credential-link { margin-top: 6px; width: max-content; border-bottom: 1px solid; font-size: 0.86rem; font-weight: 700; }
+.credential-figure { margin: 14px 0 0; max-width: 620px; border: 1px solid rgb(17 17 17 / 0.5); outline: 1px solid rgb(17 17 17 / 0.15); outline-offset: -6px; background: #d6d1cc; box-shadow: 8px 10px 0 rgb(17 17 17 / 0.08), 8px 10px 0 1px rgb(17 17 17 / 0.28); overflow: hidden; }
+.credential-figure img { display: block; width: 100%; height: auto; }
+.credential-kind { border: 1px solid rgb(17 17 17 / 0.2); border-radius: 999px; padding: 5px 11px; font: 650 0.62rem/1 var(--font-geist-mono), monospace; letter-spacing: 0.12em; text-transform: uppercase; }
 .hienlnt-signature { display: block; width: min(100%, 470px); height: auto; color: currentColor; overflow: visible; }
 .hienlnt-signature.is-compact { width: min(100%, 250px); margin-top: 18px; color: #c79f82; opacity: 0.72; }
 .signature-stroke { fill: none; stroke: currentColor; stroke-width: 5.2; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
@@ -434,6 +447,11 @@ button { font: inherit; }
   .about-grid, .projects-header, .dark-heading-row { grid-template-columns: 1fr; }
   .about-grid { margin-top: 70px; }
   .portrait-frame { max-width: 560px; }
+  .credentials { margin-top: 64px; }
+  .credential { grid-template-columns: 1fr; gap: 10px; }
+  .credential-figure { margin: 14px 0 0; max-width: 620px; border: 1px solid rgb(17 17 17 / 0.5); outline: 1px solid rgb(17 17 17 / 0.15); outline-offset: -6px; background: #d6d1cc; box-shadow: 8px 10px 0 rgb(17 17 17 / 0.08), 8px 10px 0 1px rgb(17 17 17 / 0.28); overflow: hidden; }
+.credential-figure img { display: block; width: 100%; height: auto; }
+.credential-kind { order: -1; width: max-content; }
   .portrait-image { object-position: var(--portrait-position-mobile); }
   .project-card { padding: 24px 20px; }
   .project-links { gap: 10px; }

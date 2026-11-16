@@ -54,6 +54,17 @@ export type Skill = {
   accent: "gold" | "cyan" | "violet" | "orange";
 };
 
+export type Credential = {
+  id: string;
+  kind: "certificate" | "language" | "academic";
+  title: string;
+  issuer: string;
+  period: string;
+  detail?: string;
+  href?: string;
+  image?: { src: string; alt: string };
+};
+
 export type NavigationItem = {
   label: string;
   href: `#${string}`;
@@ -100,6 +111,44 @@ export const sourceRepository: SourceRepository = {
   mobileLabel: "Source on GitHub",
   href: "https://github.com/lnt-h/profolio_hienlnt",
 };
+
+// Owner-supplied credentials. Keep wording aligned with the actual documents.
+export const credentials: readonly Credential[] = [
+  {
+    id: "devfest-2026-codelab",
+    kind: "certificate",
+    title: "Certificate of Appreciation — Codelab Challenge",
+    issuer: "GDG Mien Trung · DevFest Mien Trung 2026",
+    period: "2026",
+    detail: "Completed the Codelab challenge at the Mini Hackathon, DevFest Mien Trung 2026 — Learn Beyond Limits.",
+    href: "https://www.facebook.com/Gdgmientrung/posts/1494849352836289",
+    image: {
+      src: "/images/devfest-2026-codelab-certificate.jpg",
+      alt: "Certificate of Appreciation from GDG Mien Trung for completing the Codelab challenge at DevFest Mien Trung 2026",
+    },
+  },
+  {
+    id: "vstep-b2",
+    kind: "language",
+    title: "VSTEP English — Level B2",
+    issuer: "Vietnamese Standardized Test of English Proficiency",
+    period: "CEFR B2",
+  },
+  {
+    id: "greenwich-principles-of-security",
+    kind: "academic",
+    title: "Best subject: Principles of Security",
+    issuer: "University of Greenwich · COMP1843",
+    period: "Spring 2025",
+  },
+  {
+    id: "greenwich-web-programming-1",
+    kind: "academic",
+    title: "Best subject: Web Programming 1",
+    issuer: "University of Greenwich · COMP1841",
+    period: "Summer 2025",
+  },
+];
 
 export const spotifyTrack: SpotifyTrack = {
   title: "As It Was",

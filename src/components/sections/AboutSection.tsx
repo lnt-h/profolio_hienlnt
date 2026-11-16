@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { HienlntSignature } from "@/components/motion/HienlntSignature";
 import { Reveal } from "@/components/motion/Reveal";
-import { profile } from "@/content/site";
+import { credentials, profile } from "@/content/site";
 
 export function AboutSection() {
   return (
@@ -44,6 +44,34 @@ export function AboutSection() {
             </div>
           </Reveal>
         </div>
+        <Reveal delay={0.1}>
+          <div className="credentials">
+            <h3 className="credentials-heading">Credentials &amp; highlights</h3>
+            <ul className="credentials-list">
+              {credentials.map((item) => (
+                <li key={item.id} className="credential">
+                  <span className="credential-period">{item.period}</span>
+                  <div className="credential-body">
+                    <strong>{item.title}</strong>
+                    <span className="credential-issuer">{item.issuer}</span>
+                    {item.detail ? <p>{item.detail}</p> : null}
+                    {item.href ? (
+                      <a className="credential-link" href={item.href} target="_blank" rel="noreferrer noopener">
+                        View announcement ↗
+                      </a>
+                    ) : null}
+                    {item.image ? (
+                      <figure className="credential-figure">
+                        <Image src={item.image.src} alt={item.image.alt} width={1600} height={932} sizes="(max-width: 900px) calc(100vw - 32px), 620px" />
+                      </figure>
+                    ) : null}
+                  </div>
+                  <span className="credential-kind">{item.kind}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
