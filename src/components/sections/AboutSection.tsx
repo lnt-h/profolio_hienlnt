@@ -35,7 +35,7 @@ export function AboutSection() {
             </div>
           </Reveal>
           <Reveal delay={0.2} className="about-copy">
-            <p className="about-lead">Building useful software means understanding the problem before reaching for the tools.</p>
+            <p className="about-lead">Hi, I&apos;m Hien. I build mobile and web apps, and I&apos;m looking for a software engineering internship or junior role.</p>
             <p>{profile.shortBio}</p>
             <blockquote>{profile.principle}</blockquote>
             <div className="about-signoff">

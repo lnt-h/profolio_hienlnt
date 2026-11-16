@@ -26,6 +26,7 @@ export type Profile = {
   availabilityStatus?: string;
   eyebrow: string;
   statement: readonly [string, string, string];
+  heroIntro: string;
   shortBio: string;
   principle: string;
   portrait: Portrait;
@@ -90,9 +91,10 @@ export const profile: Profile = {
   availabilityStatus: "Open to Software Engineer / Intern Opportunities",
   eyebrow: "$ whoami — Hien Le / Software Engineer",
   statement: ["I BUILD", "REAL-WORLD", "SOFTWARE."],
+  heroIntro: "Software engineering student in Da Nang, building mobile and web apps with TypeScript, React Native, and Next.js.",
   shortBio:
-    "I care about building software that solves real problems, with thoughtful engineering and a clear product purpose.",
-  principle: "Useful software starts with clear decisions.",
+    "Final-year software engineering student in Da Nang, currently building Gonarra, an audio-first tour guide app for visitors to the city. I work mostly with TypeScript, React Native, and Next.js, and I like shipping things people can actually use.",
+  principle: "Understand the problem first. Then pick the tools.",
   portrait: {
     src: "/images/hien-portrait.jpg",
     alt: "Portrait of Hien Le",

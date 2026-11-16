@@ -12,7 +12,7 @@ export function ProjectsSection() {
               <p className="section-eyebrow">03 / Featured projects</p>
               <h2>Work with a reason<br />to exist.</h2>
             </div>
-            <p>Thoughtfully engineered applications, built to solve tangible problems for real users.</p>
+            <p>Projects I have built or am building, with the status and stack stated plainly.</p>
           </div>
         </Reveal>
 
@@ -30,8 +30,9 @@ export function ProjectsSection() {
                         <Image
                           src={project.image}
                           alt={project.title}
-                          width={1920}
-                          height={1440}
+                          width={1448}
+                          height={1086}
+                          sizes="(max-width: 900px) calc(100vw - 32px), 640px"
                           className="project-hd-image"
                           priority={index === 0}
                         />
@@ -75,10 +76,10 @@ export function ProjectsSection() {
             <div className="projects-empty">
               <div className="empty-index">01—03</div>
               <div>
-                <p className="empty-kicker">Project archive in preparation</p>
-                <h3>No placeholder projects.<br />Only verified work.</h3>
+                <p className="empty-kicker">More projects coming</p>
+                <h3>Nothing listed yet.</h3>
               </div>
-              <p>This section intentionally stays honest while project details are being prepared.</p>
+              <p>New work will appear here once it is ready to show.</p>
             </div>
           </Reveal>
         )}

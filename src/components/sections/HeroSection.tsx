@@ -22,7 +22,7 @@ export function HeroSection() {
         </h1>
         <Reveal delay={0.15} yOffset={20}>
           <div className="hero-foot">
-            <p>{profile.shortBio}</p>
+            <p>{profile.heroIntro}</p>
             <a className="text-link" href="#projects">Explore the work <span aria-hidden="true">↘</span></a>
           </div>
         </Reveal>
